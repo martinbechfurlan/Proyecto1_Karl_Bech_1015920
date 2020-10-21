@@ -213,7 +213,7 @@ namespace Proyecto1KarlBech1015920 {
 			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"ingreso";
 			this->Text = L"Ingreso";
-			this->Load += gcnew System::EventHandler(this, &ingreso::Validaciones_Load);
+			this->Load += gcnew System::EventHandler(this, &ingreso::ingreso_load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->quant_txt))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->espacio_txt))->EndInit();
 			this->ResumeLayout(false);
@@ -221,7 +221,7 @@ namespace Proyecto1KarlBech1015920 {
 
 		}
 #pragma endregion
-	private: System::Void Validaciones_Load(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void ingreso_load(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void modo_btn_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();

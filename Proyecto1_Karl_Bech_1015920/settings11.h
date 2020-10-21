@@ -89,7 +89,7 @@ namespace Proyecto1KarlBech1015920 {
 			this->campo_btn->Text = L"GO!";
 			this->campo_btn->UseVisualStyleBackColor = false;
 			this->campo_btn->Visible = false;
-			this->campo_btn->Click += gcnew System::EventHandler(this, &settings11::btn_Tablero_Click);
+			this->campo_btn->Click += gcnew System::EventHandler(this, &settings11::campo_btn_Click);
 			// 
 			// comboBox3
 			// 
@@ -212,7 +212,7 @@ namespace Proyecto1KarlBech1015920 {
 		}
 #pragma endregion
 		int v1, v2, v3;
-	private: System::Void btn_Tablero_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void campo_btn_Click(System::Object^ sender, System::EventArgs^ e) {
 		juego::p1 = cantpilas;
 		juego::tamañopilas = capacidadpilas;
 		juego::datos = diff;
