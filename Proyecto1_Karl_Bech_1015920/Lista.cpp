@@ -8,11 +8,7 @@ Lista::Lista() {
 
 
 //Insert Operations
-void Lista::Borrar() {
-	z = 0;
-	start = nullptr;
-	end = nullptr;
-}
+
 
 void Lista::InsertAtStart(int value) {
 	Node* new_node = new Node();
