@@ -17,6 +17,16 @@ namespace Proyecto1KarlBech1015920 {
 	public ref class juego2 : public System::Windows::Forms::Form
 	{
 	public:
+		Lista* miListT1;
+		Lista* miListT2;
+		Lista* miListT3;
+		Lista* miListT4;
+		Lista* miListT5;
+		Lista* miListT6;
+		Lista* miListT7;
+		Lista* miListT8;
+
+
 		Lista* lc1;
 		Lista* lc2;
 		Lista* lc3;
@@ -25,6 +35,7 @@ namespace Proyecto1KarlBech1015920 {
 		Lista* lc6;
 		Lista* lc7;
 		Lista* lc8;
+
 		Lista* todoslosdatos;
 
 		
@@ -44,14 +55,14 @@ namespace Proyecto1KarlBech1015920 {
 	private: System::Windows::Forms::DataGridView^ gameboard_dgv;
 	public:
 
-	private: System::Windows::Forms::Label^ lbl_Modo;
-	private: System::Windows::Forms::Label^ mode_lbl;
 
-	private: System::Windows::Forms::Label^ lbl_Ordenamiento;
-	private: System::Windows::Forms::Label^ orden_lbl;
 
-	private: System::Windows::Forms::Label^ lbl_Dificultad;
-	private: System::Windows::Forms::Label^ dif_lbl;
+
+
+
+
+
+
 
 	private: System::Windows::Forms::ComboBox^ destino_cb;
 
@@ -78,6 +89,7 @@ namespace Proyecto1KarlBech1015920 {
 	private: System::Windows::Forms::SaveFileDialog^ saveFileDialog2;
 
 	private: System::Windows::Forms::Button^ ordenarnueva_btn;
+	private: System::Windows::Forms::DataGridView^ dataGridView2;
 
 
 
@@ -92,6 +104,48 @@ namespace Proyecto1KarlBech1015920 {
 		juego2(void)
 		{
 			InitializeComponent();
+			miListT1 = new Lista();
+			miListT1->z = 0;
+			miListT1->start = nullptr;
+			miListT1->end = nullptr;
+
+
+			miListT2 = new Lista();
+			miListT2->z = 0;
+			miListT2->start = nullptr;
+			miListT2->end = nullptr;
+
+			miListT3 = new Lista();
+			miListT3->z = 0;
+			miListT3->start = nullptr;
+			miListT3->end = nullptr;
+
+			miListT4 = new Lista();
+			miListT4->z = 0;
+			miListT4->start = nullptr;
+			miListT4->end = nullptr;
+
+			miListT5 = new Lista();
+			miListT5->z = 0;
+			miListT5->start = nullptr;
+			miListT5->end = nullptr;
+
+
+			miListT6 = new Lista();
+			miListT6->z = 0;
+			miListT6->start = nullptr;
+			miListT6->end = nullptr;
+
+			miListT7 = new Lista();
+			miListT7->z = 0;
+			miListT7->start = nullptr;
+			miListT7->end = nullptr;
+
+			miListT8 = new Lista();
+			miListT8->z = 0;
+			miListT8->start = nullptr;
+			miListT8->end = nullptr;
+
 			lc1 = new Lista();
 			lc1->z = 0;
 			lc1->start = nullptr;
@@ -159,12 +213,6 @@ namespace Proyecto1KarlBech1015920 {
 			System::Windows::Forms::DataGridViewCellStyle^ dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(juego2::typeid));
 			this->gameboard_dgv = (gcnew System::Windows::Forms::DataGridView());
-			this->lbl_Modo = (gcnew System::Windows::Forms::Label());
-			this->mode_lbl = (gcnew System::Windows::Forms::Label());
-			this->lbl_Ordenamiento = (gcnew System::Windows::Forms::Label());
-			this->orden_lbl = (gcnew System::Windows::Forms::Label());
-			this->lbl_Dificultad = (gcnew System::Windows::Forms::Label());
-			this->dif_lbl = (gcnew System::Windows::Forms::Label());
 			this->destino_cb = (gcnew System::Windows::Forms::ComboBox());
 			this->origen_cb = (gcnew System::Windows::Forms::ComboBox());
 			this->modo_cb = (gcnew System::Windows::Forms::ComboBox());
@@ -184,7 +232,9 @@ namespace Proyecto1KarlBech1015920 {
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->saveFileDialog2 = (gcnew System::Windows::Forms::SaveFileDialog());
 			this->ordenarnueva_btn = (gcnew System::Windows::Forms::Button());
+			this->dataGridView2 = (gcnew System::Windows::Forms::DataGridView());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->gameboard_dgv))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// gameboard_dgv
@@ -216,91 +266,6 @@ namespace Proyecto1KarlBech1015920 {
 			this->gameboard_dgv->ShowEditingIcon = false;
 			this->gameboard_dgv->Size = System::Drawing::Size(439, 394);
 			this->gameboard_dgv->TabIndex = 0;
-			// 
-			// lbl_Modo
-			// 
-			this->lbl_Modo->AutoSize = true;
-			this->lbl_Modo->BackColor = System::Drawing::Color::Transparent;
-			this->lbl_Modo->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->lbl_Modo->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->lbl_Modo->Location = System::Drawing::Point(8, 8);
-			this->lbl_Modo->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->lbl_Modo->Name = L"lbl_Modo";
-			this->lbl_Modo->Size = System::Drawing::Size(147, 24);
-			this->lbl_Modo->TabIndex = 14;
-			this->lbl_Modo->Text = L"Tipo de juego:";
-			// 
-			// mode_lbl
-			// 
-			this->mode_lbl->AutoSize = true;
-			this->mode_lbl->BackColor = System::Drawing::Color::Transparent;
-			this->mode_lbl->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->mode_lbl->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->mode_lbl->Location = System::Drawing::Point(37, 43);
-			this->mode_lbl->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->mode_lbl->Name = L"mode_lbl";
-			this->mode_lbl->Size = System::Drawing::Size(0, 24);
-			this->mode_lbl->TabIndex = 15;
-			// 
-			// lbl_Ordenamiento
-			// 
-			this->lbl_Ordenamiento->AutoSize = true;
-			this->lbl_Ordenamiento->BackColor = System::Drawing::Color::Transparent;
-			this->lbl_Ordenamiento->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->lbl_Ordenamiento->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->lbl_Ordenamiento->Location = System::Drawing::Point(8, 90);
-			this->lbl_Ordenamiento->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->lbl_Ordenamiento->Name = L"lbl_Ordenamiento";
-			this->lbl_Ordenamiento->Size = System::Drawing::Size(69, 24);
-			this->lbl_Ordenamiento->TabIndex = 16;
-			this->lbl_Ordenamiento->Text = L"Modo:";
-			this->lbl_Ordenamiento->Visible = false;
-			// 
-			// orden_lbl
-			// 
-			this->orden_lbl->AutoSize = true;
-			this->orden_lbl->BackColor = System::Drawing::Color::Transparent;
-			this->orden_lbl->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->orden_lbl->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->orden_lbl->Location = System::Drawing::Point(83, 114);
-			this->orden_lbl->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->orden_lbl->Name = L"orden_lbl";
-			this->orden_lbl->Size = System::Drawing::Size(0, 24);
-			this->orden_lbl->TabIndex = 17;
-			this->orden_lbl->Visible = false;
-			// 
-			// lbl_Dificultad
-			// 
-			this->lbl_Dificultad->AutoSize = true;
-			this->lbl_Dificultad->BackColor = System::Drawing::Color::Transparent;
-			this->lbl_Dificultad->Font = (gcnew System::Drawing::Font(L"RazerF5", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->lbl_Dificultad->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->lbl_Dificultad->Location = System::Drawing::Point(8, 161);
-			this->lbl_Dificultad->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->lbl_Dificultad->Name = L"lbl_Dificultad";
-			this->lbl_Dificultad->Size = System::Drawing::Size(95, 23);
-			this->lbl_Dificultad->TabIndex = 18;
-			this->lbl_Dificultad->Text = L"Dificultad:";
-			this->lbl_Dificultad->Visible = false;
-			// 
-			// dif_lbl
-			// 
-			this->dif_lbl->AutoSize = true;
-			this->dif_lbl->BackColor = System::Drawing::Color::Transparent;
-			this->dif_lbl->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->dif_lbl->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->dif_lbl->Location = System::Drawing::Point(83, 190);
-			this->dif_lbl->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->dif_lbl->Name = L"dif_lbl";
-			this->dif_lbl->Size = System::Drawing::Size(0, 24);
-			this->dif_lbl->TabIndex = 19;
-			this->dif_lbl->Visible = false;
 			// 
 			// destino_cb
 			// 
@@ -467,7 +432,7 @@ namespace Proyecto1KarlBech1015920 {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(765, 190);
+			this->button1->Location = System::Drawing::Point(24, 75);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(75, 38);
 			this->button1->TabIndex = 34;
@@ -477,7 +442,7 @@ namespace Proyecto1KarlBech1015920 {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(731, 411);
+			this->button2->Location = System::Drawing::Point(124, 104);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(75, 23);
 			this->button2->TabIndex = 35;
@@ -488,13 +453,22 @@ namespace Proyecto1KarlBech1015920 {
 			// 
 			// ordenarnueva_btn
 			// 
-			this->ordenarnueva_btn->Location = System::Drawing::Point(765, 114);
+			this->ordenarnueva_btn->Location = System::Drawing::Point(124, 75);
 			this->ordenarnueva_btn->Name = L"ordenarnueva_btn";
 			this->ordenarnueva_btn->Size = System::Drawing::Size(85, 23);
 			this->ordenarnueva_btn->TabIndex = 37;
 			this->ordenarnueva_btn->Text = L"ORDENAR";
 			this->ordenarnueva_btn->UseVisualStyleBackColor = true;
 			this->ordenarnueva_btn->Click += gcnew System::EventHandler(this, &juego2::ordenarnueva_btn_Click);
+			// 
+			// dataGridView2
+			// 
+			this->dataGridView2->BackgroundColor = System::Drawing::Color::Gold;
+			this->dataGridView2->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView2->Location = System::Drawing::Point(725, 8);
+			this->dataGridView2->Name = L"dataGridView2";
+			this->dataGridView2->Size = System::Drawing::Size(433, 394);
+			this->dataGridView2->TabIndex = 38;
 			// 
 			// juego2
 			// 
@@ -504,7 +478,8 @@ namespace Proyecto1KarlBech1015920 {
 				static_cast<System::Int32>(static_cast<System::Byte>(192)));
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(882, 453);
+			this->ClientSize = System::Drawing::Size(1170, 453);
+			this->Controls->Add(this->dataGridView2);
 			this->Controls->Add(this->ordenarnueva_btn);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
@@ -522,12 +497,6 @@ namespace Proyecto1KarlBech1015920 {
 			this->Controls->Add(this->modo_cb);
 			this->Controls->Add(this->origen_cb);
 			this->Controls->Add(this->destino_cb);
-			this->Controls->Add(this->dif_lbl);
-			this->Controls->Add(this->lbl_Dificultad);
-			this->Controls->Add(this->orden_lbl);
-			this->Controls->Add(this->lbl_Ordenamiento);
-			this->Controls->Add(this->mode_lbl);
-			this->Controls->Add(this->lbl_Modo);
 			this->Controls->Add(this->gameboard_dgv);
 			this->DoubleBuffered = true;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
@@ -536,6 +505,7 @@ namespace Proyecto1KarlBech1015920 {
 			this->Text = L"juego2";
 			this->Load += gcnew System::EventHandler(this, &juego2::juego2_load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->gameboard_dgv))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -549,505 +519,27 @@ namespace Proyecto1KarlBech1015920 {
 		void dificultad(int dif) {
 			if (dif == 1) {
 				difmoves = 9999999;
-				dif_lbl->Text = "Fácil";
-				permove_lbl->Text = "Sin límite";
+				
 			}
 			else if (dif == 2) {
 				difmoves = 50;
-				dif_lbl->Text = "Medio";
-				permove_lbl->Text = "" + difmoves;
+				
 			}
 			else if (dif == 3) {
 				difmoves = 25;
-				dif_lbl->Text = "Difícil";
-				permove_lbl->Text = "" + difmoves;
+				
 			}
 		}
 
 
-		void colorear() {
-			int x = 0, c1 = tamañopilas - 1, c2 = tamañopilas - 1, c3 = tamañopilas - 1, c4 = tamañopilas - 1, c5 = tamañopilas - 1, c6 = tamañopilas - 1, c7 = tamañopilas - 1, c8 = tamañopilas - 1;
-			String^ l;
-
-			for (size_t i = 0; i < datos->Length; i++) {
-				l = datos[i];
-				if (l == "B") {
-					if (x == 0) {
-						lc1->InsertAtEnd(1);
-						todoslosdatos->InsertAtEnd(1);
-						gameboard_dgv->Rows[c1]->Cells[0]->Style->BackColor = Color::Black;
-				
-						c1--;
-
-					}
-					else if (x == 1) {
-						lc2->InsertAtEnd(1);
-						todoslosdatos->InsertAtEnd(1);
-						gameboard_dgv->Rows[c2]->Cells[1]->Style->BackColor = Color::Black;
-			
-						c2--;
-					}
-					else if (x == 2) {
-						lc3->InsertAtEnd(1);
-						todoslosdatos->InsertAtEnd(1);
-						gameboard_dgv->Rows[c3]->Cells[2]->Style->BackColor = Color::Black;
-			
-						c3--;
-					}
-					else if (x == 3) {
-						lc4->InsertAtEnd(1);
-						todoslosdatos->InsertAtEnd(1);
-						gameboard_dgv->Rows[c4]->Cells[3]->Style->BackColor = Color::Black;
-			
-						c4--;
-					}
-					else if (x == 4) {
-						lc5->InsertAtEnd(1);
-						todoslosdatos->InsertAtEnd(1);
-						gameboard_dgv->Rows[c5]->Cells[4]->Style->BackColor = Color::Black;
-				
-						c5--;
-					}
-					else if (x == 5) {
-						lc6->InsertAtEnd(1);
-						todoslosdatos->InsertAtEnd(1);
-						gameboard_dgv->Rows[c6]->Cells[5]->Style->BackColor = Color::Black;
-				
-						c6--;
-					}
-					else if (x == 6) {
-						lc7->InsertAtEnd(1);
-						todoslosdatos->InsertAtEnd(1);
-						gameboard_dgv->Rows[c7]->Cells[6]->Style->BackColor = Color::Black;
-					
-						c7--;
-					}
-					else if (x == 7) {
-						lc8->InsertAtEnd(1);
-						todoslosdatos->InsertAtEnd(1);
-						gameboard_dgv->Rows[c8]->Cells[7]->Style->BackColor = Color::Black;
-					
-						c8--;
-					}
-				}
-				else if (l == "Z") {
-					if (x == 0) {
-						lc1->InsertAtEnd(2);
-						todoslosdatos->InsertAtEnd(2);
-						gameboard_dgv->Rows[c1]->Cells[0]->Style->BackColor = Color::Blue;
-					
-						c1--;
-					}
-					else if (x == 1) {
-						lc2->InsertAtEnd(2);
-						todoslosdatos->InsertAtEnd(2);
-						gameboard_dgv->Rows[c2]->Cells[1]->Style->BackColor = Color::Blue;
-					
-						c2--;
-					}
-					else if (x == 2) {
-						lc3->InsertAtEnd(2);
-						todoslosdatos->InsertAtEnd(2);
-						gameboard_dgv->Rows[c3]->Cells[2]->Style->BackColor = Color::Blue;
-				
-						c3--;
-					}
-					else if (x == 3) {
-						lc4->InsertAtEnd(2);
-						todoslosdatos->InsertAtEnd(2);
-						gameboard_dgv->Rows[c4]->Cells[3]->Style->BackColor = Color::Blue;
-						
-						c4--;
-					}
-					else if (x == 4) {
-						lc5->InsertAtEnd(2);
-						todoslosdatos->InsertAtEnd(2);
-						gameboard_dgv->Rows[c5]->Cells[4]->Style->BackColor = Color::Blue;
-				
-						c5--;
-					}
-					else if (x == 5) {
-						lc6->InsertAtEnd(2);
-						todoslosdatos->InsertAtEnd(2);
-						gameboard_dgv->Rows[c6]->Cells[5]->Style->BackColor = Color::Blue;
-				
-						c6--;
-					}
-					else if (x == 6) {
-						lc7->InsertAtEnd(2);
-						todoslosdatos->InsertAtEnd(2);
-						gameboard_dgv->Rows[c7]->Cells[6]->Style->BackColor = Color::Blue;
-					
-						c7--;
-					}
-					else if (x == 7) {
-						lc8->InsertAtEnd(2);
-						todoslosdatos->InsertAtEnd(2);
-						gameboard_dgv->Rows[c8]->Cells[7]->Style->BackColor = Color::Blue;
-					
-						c8--;
-					}
-				}
-				else if (l == "W") {
-					if (x == 0) {
-						lc1->InsertAtEnd(3);
-						todoslosdatos->InsertAtEnd(3);
-						gameboard_dgv->Rows[c1]->Cells[0]->Style->BackColor = Color::Gray;
-						
-						c1--;
-					}
-					else if (x == 1) {
-						lc2->InsertAtEnd(3);
-						todoslosdatos->InsertAtEnd(3);
-						gameboard_dgv->Rows[c2]->Cells[1]->Style->BackColor = Color::Gray;
-				
-						c2--;
-					}
-					else if (x == 2) {
-						lc3->InsertAtEnd(3);
-						todoslosdatos->InsertAtEnd(3);
-						gameboard_dgv->Rows[c3]->Cells[2]->Style->BackColor = Color::Gray;
-					
-						c3--;
-					}
-					else if (x == 3) {
-						lc4->InsertAtEnd(3);
-						todoslosdatos->InsertAtEnd(3);
-						gameboard_dgv->Rows[c4]->Cells[3]->Style->BackColor = Color::Gray;
-					
-						c4--;
-					}
-					else if (x == 4) {
-						lc5->InsertAtEnd(3);
-						todoslosdatos->InsertAtEnd(3);
-						gameboard_dgv->Rows[c5]->Cells[4]->Style->BackColor = Color::Gray;
-					
-						c5--;
-					}
-					else if (x == 5) {
-						lc6->InsertAtEnd(3);
-						todoslosdatos->InsertAtEnd(3);
-						gameboard_dgv->Rows[c6]->Cells[5]->Style->BackColor = Color::Gray;
-						
-						c6--;
-					}
-					else if (x == 6) {
-						lc7->InsertAtEnd(3);
-						todoslosdatos->InsertAtEnd(3);
-						gameboard_dgv->Rows[c7]->Cells[6]->Style->BackColor = Color::Gray;
-					
-						c7--;
-					}
-					else if (x == 7) {
-						lc8->InsertAtEnd(3);
-						todoslosdatos->InsertAtEnd(3);
-						gameboard_dgv->Rows[c8]->Cells[7]->Style->BackColor = Color::Gray;
-						
-						c8--;
-					}
-				}
-				else if (l == "R") {
-					if (x == 0) {
-						lc1->InsertAtEnd(4);
-						todoslosdatos->InsertAtEnd(4);
-						gameboard_dgv->Rows[c1]->Cells[0]->Style->BackColor = Color::Red;
-						
-						c1--;
-					}
-					else if (x == 1) {
-						lc2->InsertAtEnd(4);
-						todoslosdatos->InsertAtEnd(4);
-						gameboard_dgv->Rows[c2]->Cells[1]->Style->BackColor = Color::Red;
-					
-						c2--;
-					}
-					else if (x == 2) {
-						lc3->InsertAtEnd(4);
-						todoslosdatos->InsertAtEnd(4);
-						gameboard_dgv->Rows[c3]->Cells[2]->Style->BackColor = Color::Red;
-					
-						c3--;
-					}
-					else if (x == 3) {
-						lc4->InsertAtEnd(4);
-						todoslosdatos->InsertAtEnd(4);
-						gameboard_dgv->Rows[c4]->Cells[3]->Style->BackColor = Color::Red;
-					
-						c4--;
-					}
-					else if (x == 4) {
-						lc5->InsertAtEnd(4);
-						todoslosdatos->InsertAtEnd(4);
-						gameboard_dgv->Rows[c5]->Cells[4]->Style->BackColor = Color::Red;
-					
-						c5--;
-					}
-					else if (x == 5) {
-						lc6->InsertAtEnd(4);
-						todoslosdatos->InsertAtEnd(4);
-						gameboard_dgv->Rows[c6]->Cells[5]->Style->BackColor = Color::Red;
-						
-						c6--;
-					}
-					else if (x == 6) {
-						lc7->InsertAtEnd(4);
-						todoslosdatos->InsertAtEnd(4);
-						gameboard_dgv->Rows[c7]->Cells[6]->Style->BackColor = Color::Red;
-						
-						c7--;
-					}
-					else if (x == 7) {
-						lc8->InsertAtEnd(4);
-						todoslosdatos->InsertAtEnd(4);
-						gameboard_dgv->Rows[c8]->Cells[7]->Style->BackColor = Color::Red;
-						
-						c8--;
-					}
-				}
-				else if (l == "Y") {
-					if (x == 0) {
-						lc1->InsertAtEnd(5);
-						todoslosdatos->InsertAtEnd(5);
-						gameboard_dgv->Rows[c1]->Cells[0]->Style->BackColor = Color::Yellow;
-						
-						c1--;
-					}
-					else if (x == 1) {
-						lc2->InsertAtEnd(5);
-						todoslosdatos->InsertAtEnd(5);
-						gameboard_dgv->Rows[c2]->Cells[1]->Style->BackColor = Color::Yellow;
-						
-						c2--;
-					}
-					else if (x == 2) {
-						lc3->InsertAtEnd(5);
-						todoslosdatos->InsertAtEnd(5);
-						gameboard_dgv->Rows[c3]->Cells[2]->Style->BackColor = Color::Yellow;
-						
-						c3--;
-					}
-					else if (x == 3) {
-						lc4->InsertAtEnd(5);
-						todoslosdatos->InsertAtEnd(5);
-						gameboard_dgv->Rows[c4]->Cells[3]->Style->BackColor = Color::Yellow;
-						
-						c4--;
-					}
-					else if (x == 4) {
-						lc5->InsertAtEnd(5);
-						todoslosdatos->InsertAtEnd(5);
-						gameboard_dgv->Rows[c5]->Cells[4]->Style->BackColor = Color::Yellow;
-						
-						c5--;
-					}
-					else if (x == 5) {
-						lc6->InsertAtEnd(5);
-						todoslosdatos->InsertAtEnd(5);
-						gameboard_dgv->Rows[c6]->Cells[5]->Style->BackColor = Color::Yellow;
-						
-						c6--;
-					}
-					else if (x == 6) {
-						lc7->InsertAtEnd(5);
-						todoslosdatos->InsertAtEnd(5);
-						gameboard_dgv->Rows[c7]->Cells[6]->Style->BackColor = Color::Yellow;
-						
-						c7--;
-					}
-					else if (x == 7) {
-						lc8->InsertAtEnd(5);
-						todoslosdatos->InsertAtEnd(5);
-						gameboard_dgv->Rows[c8]->Cells[7]->Style->BackColor = Color::Yellow;
-						
-						c8--;
-					}
-				}
-				else if (l == "G") {
-					if (x == 0) {
-						lc1->InsertAtEnd(6);
-						todoslosdatos->InsertAtEnd(6);
-						gameboard_dgv->Rows[c1]->Cells[0]->Style->BackColor = Color::Green;
-						
-						c1--;
-					}
-					else if (x == 1) {
-						lc2->InsertAtEnd(6);
-						todoslosdatos->InsertAtEnd(6);
-						gameboard_dgv->Rows[c2]->Cells[1]->Style->BackColor = Color::Green;
-					
-						c2--;
-					}
-					else if (x == 2) {
-						lc3->InsertAtEnd(6);
-						todoslosdatos->InsertAtEnd(6);
-						gameboard_dgv->Rows[c3]->Cells[2]->Style->BackColor = Color::Green;
-				
-						c3--;
-					}
-					else if (x == 3) {
-						lc4->InsertAtEnd(6);
-						todoslosdatos->InsertAtEnd(6);
-						gameboard_dgv->Rows[c4]->Cells[3]->Style->BackColor = Color::Green;
-						
-						c4--;
-					}
-					else if (x == 4) {
-						lc5->InsertAtEnd(6);
-						todoslosdatos->InsertAtEnd(6);
-						gameboard_dgv->Rows[c5]->Cells[4]->Style->BackColor = Color::Green;
-						
-						c5--;
-					}
-					else if (x == 5) {
-						lc6->InsertAtEnd(6);
-						todoslosdatos->InsertAtEnd(6);
-						gameboard_dgv->Rows[c6]->Cells[5]->Style->BackColor = Color::Green;
-						
-						c6--;
-					}
-					else if (x == 6) {
-						lc7->InsertAtEnd(6);
-						todoslosdatos->InsertAtEnd(6);
-						gameboard_dgv->Rows[c7]->Cells[6]->Style->BackColor = Color::Green;
-						
-						c7--;
-					}
-					else if (x == 7) {
-						lc8->InsertAtEnd(6);
-						todoslosdatos->InsertAtEnd(6);
-						gameboard_dgv->Rows[c8]->Cells[7]->Style->BackColor = Color::Green;
-					
-						c8--;
-					}
-				}
-				else if (l == "P") {
-					if (x == 0) {
-						lc1->InsertAtEnd(7);
-						todoslosdatos->InsertAtEnd(7);
-						gameboard_dgv->Rows[c1]->Cells[0]->Style->BackColor = Color::Purple;
-					
-						c1--;
-					}
-					else if (x == 1) {
-						lc2->InsertAtEnd(7);
-						todoslosdatos->InsertAtEnd(7);
-						gameboard_dgv->Rows[c2]->Cells[1]->Style->BackColor = Color::Purple;
-						
-						c2--;
-					}
-					else if (x == 2) {
-						lc3->InsertAtEnd(7);
-						todoslosdatos->InsertAtEnd(7);
-						gameboard_dgv->Rows[c3]->Cells[2]->Style->BackColor = Color::Purple;
-						
-						c3--;
-					}
-					else if (x == 3) {
-						lc4->InsertAtEnd(7);
-						todoslosdatos->InsertAtEnd(7);
-						gameboard_dgv->Rows[c4]->Cells[3]->Style->BackColor = Color::Purple;
-					
-						c4--;
-					}
-					else if (x == 4) {
-						lc5->InsertAtEnd(7);
-						todoslosdatos->InsertAtEnd(7);
-						gameboard_dgv->Rows[c5]->Cells[4]->Style->BackColor = Color::Purple;
-						
-						c5--;
-					}
-					else if (x == 5) {
-						lc6->InsertAtEnd(7);
-						todoslosdatos->InsertAtEnd(7);
-						gameboard_dgv->Rows[c6]->Cells[5]->Style->BackColor = Color::Purple;
-						
-						c6--;
-					}
-					else if (x == 6) {
-						lc7->InsertAtEnd(7);
-						todoslosdatos->InsertAtEnd(7);
-						gameboard_dgv->Rows[c7]->Cells[6]->Style->BackColor = Color::Purple;
-						
-						c7--;
-					}
-					else if (x == 7) {
-						lc8->InsertAtEnd(7);
-						todoslosdatos->InsertAtEnd(7);
-						gameboard_dgv->Rows[c8]->Cells[7]->Style->BackColor = Color::Purple;
-						
-						c8--;
-					}
-				}
-				else if (l == "N") {
-					if (x == 0) {
-						lc1->InsertAtEnd(8);
-						todoslosdatos->InsertAtEnd(8);
-						gameboard_dgv->Rows[c1]->Cells[0]->Style->BackColor = Color::DarkBlue;
-					
-						c1--;
-					}
-					else if (x == 1) {
-						lc2->InsertAtEnd(8);
-						todoslosdatos->InsertAtEnd(8);
-						gameboard_dgv->Rows[c2]->Cells[1]->Style->BackColor = Color::DarkBlue;
-						
-						c2--;
-					}
-					else if (x == 2) {
-						lc3->InsertAtEnd(8);
-						todoslosdatos->InsertAtEnd(8);
-						gameboard_dgv->Rows[c3]->Cells[2]->Style->BackColor = Color::DarkBlue;
-					
-						c3--;
-					}
-					else if (x == 3) {
-						lc4->InsertAtEnd(8);
-						todoslosdatos->InsertAtEnd(8);
-						gameboard_dgv->Rows[c4]->Cells[3]->Style->BackColor = Color::DarkBlue;
-						
-						c4--;
-					}
-					else if (x == 4) {
-						lc5->InsertAtEnd(8);
-						todoslosdatos->InsertAtEnd(8);
-						gameboard_dgv->Rows[c5]->Cells[4]->Style->BackColor = Color::DarkBlue;
-					
-						c5--;
-					}
-					else if (x == 5) {
-						lc6->InsertAtEnd(8);
-						todoslosdatos->InsertAtEnd(8);
-						gameboard_dgv->Rows[c6]->Cells[5]->Style->BackColor = Color::DarkBlue;
-					
-						c6--;
-					}
-					else if (x == 6) {
-						lc7->InsertAtEnd(8);
-						todoslosdatos->InsertAtEnd(8);
-						gameboard_dgv->Rows[c7]->Cells[6]->Style->BackColor = Color::DarkBlue;
-			
-						c7--;
-					}
-					else if (x == 7) {
-						lc8->InsertAtEnd(8);
-						todoslosdatos->InsertAtEnd(8);
-						gameboard_dgv->Rows[c8]->Cells[7]->Style->BackColor = Color::DarkBlue;
-					
-						c8--;
-					}
-				}
-				else if (l == "X" || l == "x") {
-					x++;
-				}
-			}
-		}
+	
 
 	private: System::Void juego2_load(System::Object^ sender, System::EventArgs^ e) {
 		
 		for (int i = 0; i < p1; i++) {
 
 			DataGridViewColumn^ nuevacolumna = gcnew DataGridViewColumn();
-			nuevacolumna->Width = 45;
+			nuevacolumna->Width = 60;
 
 
 			DataGridViewCell^ cellTemplate = gcnew DataGridViewTextBoxCell();
@@ -1061,12 +553,365 @@ namespace Proyecto1KarlBech1015920 {
 		}
 		for (int i = 0; i < tamañopilas; i++) {
 			gameboard_dgv->Rows->Add();
+
 		
 		}
-		colorear();
+		int x = 0;
+		int x1 = tamañopilas - 1;
+		int x2 = tamañopilas - 1;
+		int x3 = tamañopilas - 1;
+		int x4 = tamañopilas - 1;
+		int x5 = tamañopilas - 1;
+		int x6 = tamañopilas - 1;
+		int x7 = tamañopilas - 1;
+		int x8 = tamañopilas - 1;
+		String^ l;
+
+		for (size_t i = 0; i < datos->Length; i++) {
+			l = datos[i];
+			if (l == "B") {
+				if (x == 0) {
+					lc1->InsertAtEnd(1);
+					gameboard_dgv->Rows[x1]->Cells[0]->Style->BackColor = Color::Black;
+					x1--;
+
+				}
+				else if (x == 1) {
+					lc2->InsertAtEnd(1);
+					gameboard_dgv->Rows[x2]->Cells[1]->Style->BackColor = Color::Black;
+					x2--;
+				}
+				else if (x == 2) {
+					lc3->InsertAtEnd(1);
+					gameboard_dgv->Rows[x3]->Cells[2]->Style->BackColor = Color::Black;
+					x3--;
+				}
+				else if (x == 3) {
+					lc4->InsertAtEnd(1);
+					gameboard_dgv->Rows[x4]->Cells[3]->Style->BackColor = Color::Black;
+					x4--;
+				}
+				else if (x == 4) {
+					lc5->InsertAtEnd(1);
+					gameboard_dgv->Rows[x5]->Cells[4]->Style->BackColor = Color::Black;
+					x5--;
+				}
+				else if (x == 5) {
+					lc6->InsertAtEnd(1);
+					gameboard_dgv->Rows[x6]->Cells[5]->Style->BackColor = Color::Black;
+					x6--;
+				}
+				else if (x == 6) {
+					lc7->InsertAtEnd(1);
+					gameboard_dgv->Rows[x7]->Cells[6]->Style->BackColor = Color::Black;
+					x7--;
+				}
+				else if (x == 7) {
+					lc8->InsertAtEnd(1);
+					gameboard_dgv->Rows[x8]->Cells[7]->Style->BackColor = Color::Black;
+					x8--;
+				}
+			}
+			else if (l == "Z") {
+				if (x == 0) {
+					lc1->InsertAtEnd(2);
+					gameboard_dgv->Rows[x1]->Cells[0]->Style->BackColor = Color::Blue;
+					x1--;
+				}
+				else if (x == 1) {
+					lc2->InsertAtEnd(2);
+					gameboard_dgv->Rows[x2]->Cells[1]->Style->BackColor = Color::Blue;
+					x2--;
+				}
+				else if (x == 2) {
+					lc3->InsertAtEnd(2);
+					gameboard_dgv->Rows[x3]->Cells[2]->Style->BackColor = Color::Blue;
+					x3--;
+				}
+				else if (x == 3) {
+					lc4->InsertAtEnd(2);
+					gameboard_dgv->Rows[x4]->Cells[3]->Style->BackColor = Color::Blue;
+					x4--;
+				}
+				else if (x == 4) {
+					lc5->InsertAtEnd(2);
+					gameboard_dgv->Rows[x5]->Cells[4]->Style->BackColor = Color::Blue;
+					x5--;
+				}
+				else if (x == 5) {
+					lc6->InsertAtEnd(2);
+					gameboard_dgv->Rows[x6]->Cells[5]->Style->BackColor = Color::Blue;
+					x6--;
+				}
+				else if (x == 6) {
+					lc7->InsertAtEnd(2);
+					gameboard_dgv->Rows[x7]->Cells[6]->Style->BackColor = Color::Blue;
+					x7--;
+				}
+				else if (x == 7) {
+					lc8->InsertAtEnd(2);
+					gameboard_dgv->Rows[x8]->Cells[7]->Style->BackColor = Color::Blue;
+					x8--;
+				}
+			}
+			else if (l == "W") {
+				if (x == 0) {
+					lc1->InsertAtEnd(3);
+					gameboard_dgv->Rows[x1]->Cells[0]->Style->BackColor = Color::Gray;
+					x1--;
+				}
+				else if (x == 1) {
+					lc2->InsertAtEnd(3);
+					gameboard_dgv->Rows[x2]->Cells[1]->Style->BackColor = Color::Gray;
+					x2--;
+				}
+				else if (x == 2) {
+					lc3->InsertAtEnd(3);
+					gameboard_dgv->Rows[x3]->Cells[2]->Style->BackColor = Color::Gray;
+					x3--;
+				}
+				else if (x == 3) {
+					lc4->InsertAtEnd(3);
+					gameboard_dgv->Rows[x4]->Cells[3]->Style->BackColor = Color::Gray;
+					x4--;
+				}
+				else if (x == 4) {
+					lc5->InsertAtEnd(3);
+					gameboard_dgv->Rows[x5]->Cells[4]->Style->BackColor = Color::Gray;
+					x5--;
+				}
+				else if (x == 5) {
+					lc6->InsertAtEnd(3);
+					gameboard_dgv->Rows[x6]->Cells[5]->Style->BackColor = Color::Gray;
+					x6--;
+				}
+				else if (x == 6) {
+					lc7->InsertAtEnd(3);
+					gameboard_dgv->Rows[x7]->Cells[6]->Style->BackColor = Color::Gray;
+					x7--;
+				}
+				else if (x == 7) {
+					lc8->InsertAtEnd(3);
+					gameboard_dgv->Rows[x8]->Cells[7]->Style->BackColor = Color::Gray;
+					x8--;
+				}
+			}
+			else if (l == "R") {
+				if (x == 0) {
+					lc1->InsertAtEnd(4);
+					gameboard_dgv->Rows[x1]->Cells[0]->Style->BackColor = Color::Red;
+					x1--;
+				}
+				else if (x == 1) {
+					lc2->InsertAtEnd(4);
+					gameboard_dgv->Rows[x2]->Cells[1]->Style->BackColor = Color::Red;
+					x2--;
+				}
+				else if (x == 2) {
+					lc3->InsertAtEnd(4);
+					gameboard_dgv->Rows[x3]->Cells[2]->Style->BackColor = Color::Red;
+					x3--;
+				}
+				else if (x == 3) {
+					lc4->InsertAtEnd(4);
+					gameboard_dgv->Rows[x4]->Cells[3]->Style->BackColor = Color::Red;
+					x4--;
+				}
+				else if (x == 4) {
+					lc5->InsertAtEnd(4);
+					gameboard_dgv->Rows[x5]->Cells[4]->Style->BackColor = Color::Red;
+					x5--;
+				}
+				else if (x == 5) {
+					lc6->InsertAtEnd(4);
+					gameboard_dgv->Rows[x6]->Cells[5]->Style->BackColor = Color::Red;
+					x6--;
+				}
+				else if (x == 6) {
+					lc7->InsertAtEnd(4);
+					gameboard_dgv->Rows[x7]->Cells[6]->Style->BackColor = Color::Red;
+					x7--;
+				}
+				else if (x == 7) {
+					lc8->InsertAtEnd(4);
+					gameboard_dgv->Rows[x8]->Cells[7]->Style->BackColor = Color::Red;
+					x8--;
+				}
+			}
+			else if (l == "Y") {
+				if (x == 0) {
+					lc1->InsertAtEnd(5);
+					gameboard_dgv->Rows[x1]->Cells[0]->Style->BackColor = Color::Yellow;
+					x1--;
+				}
+				else if (x == 1) {
+					lc2->InsertAtEnd(5);
+					gameboard_dgv->Rows[x2]->Cells[1]->Style->BackColor = Color::Yellow;
+					x2--;
+				}
+				else if (x == 2) {
+					lc3->InsertAtEnd(5);
+					gameboard_dgv->Rows[x3]->Cells[2]->Style->BackColor = Color::Yellow;
+					x3--;
+				}
+				else if (x == 3) {
+					lc4->InsertAtEnd(5);
+					gameboard_dgv->Rows[x4]->Cells[3]->Style->BackColor = Color::Yellow;
+					x4--;
+				}
+				else if (x == 4) {
+					lc5->InsertAtEnd(5);
+					gameboard_dgv->Rows[x5]->Cells[4]->Style->BackColor = Color::Yellow;
+					x5--;
+				}
+				else if (x == 5) {
+					lc6->InsertAtEnd(5);
+					gameboard_dgv->Rows[x6]->Cells[5]->Style->BackColor = Color::Yellow;
+					x6--;
+				}
+				else if (x == 6) {
+					lc7->InsertAtEnd(5);
+					gameboard_dgv->Rows[x7]->Cells[6]->Style->BackColor = Color::Yellow;
+					x7--;
+				}
+				else if (x == 7) {
+					lc8->InsertAtEnd(5);
+					gameboard_dgv->Rows[x8]->Cells[7]->Style->BackColor = Color::Yellow;
+					x8--;
+				}
+			}
+			else if (l == "G") {
+				if (x == 0) {
+					lc1->InsertAtEnd(6);
+					gameboard_dgv->Rows[x1]->Cells[0]->Style->BackColor = Color::Green;
+					x1--;
+				}
+				else if (x == 1) {
+					lc2->InsertAtEnd(6);
+					gameboard_dgv->Rows[x2]->Cells[1]->Style->BackColor = Color::Green;
+					x2--;
+				}
+				else if (x == 2) {
+					lc3->InsertAtEnd(6);
+					gameboard_dgv->Rows[x3]->Cells[2]->Style->BackColor = Color::Green;
+					x3--;
+				}
+				else if (x == 3) {
+					lc4->InsertAtEnd(6);
+					gameboard_dgv->Rows[x4]->Cells[3]->Style->BackColor = Color::Green;
+					x4--;
+				}
+				else if (x == 4) {
+					lc5->InsertAtEnd(6);
+					gameboard_dgv->Rows[x5]->Cells[4]->Style->BackColor = Color::Green;
+					x5--;
+				}
+				else if (x == 5) {
+					lc6->InsertAtEnd(6);
+					gameboard_dgv->Rows[x6]->Cells[5]->Style->BackColor = Color::Green;
+					x6--;
+				}
+				else if (x == 6) {
+					lc7->InsertAtEnd(6);
+					gameboard_dgv->Rows[x7]->Cells[6]->Style->BackColor = Color::Green;
+					x7--;
+				}
+				else if (x == 7) {
+					lc8->InsertAtEnd(6);
+					gameboard_dgv->Rows[x8]->Cells[7]->Style->BackColor = Color::Green;
+					x8--;
+				}
+			}
+			else if (l == "P") {
+				if (x == 0) {
+					lc1->InsertAtEnd(7);
+					gameboard_dgv->Rows[x1]->Cells[0]->Style->BackColor = Color::Purple;
+					x1--;
+				}
+				else if (x == 1) {
+					lc2->InsertAtEnd(7);
+					gameboard_dgv->Rows[x2]->Cells[1]->Style->BackColor = Color::Purple;
+					x2--;
+				}
+				else if (x == 2) {
+					lc3->InsertAtEnd(7);
+					gameboard_dgv->Rows[x3]->Cells[2]->Style->BackColor = Color::Purple;
+					x3--;
+				}
+				else if (x == 3) {
+					lc4->InsertAtEnd(7);
+					gameboard_dgv->Rows[x4]->Cells[3]->Style->BackColor = Color::Purple;
+					x4--;
+				}
+				else if (x == 4) {
+					lc5->InsertAtEnd(7);
+					gameboard_dgv->Rows[x5]->Cells[4]->Style->BackColor = Color::Purple;
+					x5--;
+				}
+				else if (x == 5) {
+					lc6->InsertAtEnd(7);
+					gameboard_dgv->Rows[x6]->Cells[5]->Style->BackColor = Color::Purple;
+					x6--;
+				}
+				else if (x == 6) {
+					lc7->InsertAtEnd(7);
+					gameboard_dgv->Rows[x7]->Cells[6]->Style->BackColor = Color::Purple;
+					x7--;
+				}
+				else if (x == 7) {
+					lc8->InsertAtEnd(7);
+					gameboard_dgv->Rows[x8]->Cells[7]->Style->BackColor = Color::Purple;
+					x8--;
+				}
+			}
+			else if (l == "N") {
+				if (x == 0) {
+					lc1->InsertAtEnd(8);
+					gameboard_dgv->Rows[x1]->Cells[0]->Style->BackColor = Color::DarkBlue;
+					x1--;
+				}
+				else if (x == 1) {
+					lc2->InsertAtEnd(8);
+					gameboard_dgv->Rows[x2]->Cells[1]->Style->BackColor = Color::DarkBlue;
+					x2--;
+				}
+				else if (x == 2) {
+					lc3->InsertAtEnd(8);
+					gameboard_dgv->Rows[x3]->Cells[2]->Style->BackColor = Color::DarkBlue;
+					x3--;
+				}
+				else if (x == 3) {
+					lc4->InsertAtEnd(8);
+					gameboard_dgv->Rows[x4]->Cells[3]->Style->BackColor = Color::DarkBlue;
+					x4--;
+				}
+				else if (x == 4) {
+					lc5->InsertAtEnd(8);
+					gameboard_dgv->Rows[x5]->Cells[4]->Style->BackColor = Color::DarkBlue;
+					x5--;
+				}
+				else if (x == 5) {
+					lc6->InsertAtEnd(8);
+					gameboard_dgv->Rows[x6]->Cells[5]->Style->BackColor = Color::DarkBlue;
+					x6--;
+				}
+				else if (x == 6) {
+					lc7->InsertAtEnd(8);
+					gameboard_dgv->Rows[x7]->Cells[6]->Style->BackColor = Color::DarkBlue;
+					x7--;
+				}
+				else if (x == 7) {
+					lc8->InsertAtEnd(8);
+					gameboard_dgv->Rows[x8]->Cells[7]->Style->BackColor = Color::DarkBlue;
+					x8--;
+				}
+			}
+			else if (l == "X" || l == "x") {
+				x++;
+			}
+		}
 		if (mpila == true) {
-			modo_cb->Visible = true;
-			mode_lbl->Text = "Juego con pausas";
+	
 			ordenamiento(choosemode);
 			for (int i = 0; i < p1; i++) {
 				origen_cb->Items->Add("Lista " + (i + 1));
@@ -1074,231 +919,32 @@ namespace Proyecto1KarlBech1015920 {
 			}
 		}
 		else {
-			mode_lbl->Text = "Juego sin pausas";
 			ordenamiento(choosemode);
 		}
 	}
 		   void ordenamiento(int numero) {
 			   if (numero == 1) {
-				   lbl_Ordenamiento->Visible = true;
-				   orden_lbl->Visible = true;
-				   orden_lbl->Text = "Pila";
+				
 				   dificultad(difp);
 			   }
 			   else if (numero == 2) {
-				   lbl_Ordenamiento->Visible = true;
-				   orden_lbl->Visible = true;
-				   orden_lbl->Text = "Cola";
+				
 				   dificultad(difp);
 			   }
 			   else {
-				   lbl_Ordenamiento->Visible = false;
-				   orden_lbl->Visible = false;
+				 
 				   dificultad(difp);
 			   }
 		   }
 
-		   void colordgv() {
-			   for (int i = 0; i < p1; i++) {
-				   int x = tamañopilas - 1;
-				   int y = 0;
-				   int z = 0;
-				   if (i == 0) {
-					   z1 = lc1->Total();
-					   for (int t1 = (tamañopilas - 1); t1 >= 0; t1--) {
-						   if (z1 > t1)
-						   {
-							   colordgvp(lc1->GetValue(y), i, x);
-							   x--;
-							   y++;
-						   }
-						   else
-						   {
-							   gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
-							   
-							   z++;
-						   }
-
-					   }
-				   }
-				   else if (i == 1) {
-					   z1 = lc2->Total();
-					   for (int t2 = (tamañopilas - 1); t2 >= 0; t2--) {
-						   if (z1 > t2)
-						   {
-							   colordgvp(lc2->GetValue(y), i, x);
-							   x--;
-							   y++;
-						   }
-						   else
-						   {
-							   gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
-							 
-							   z++;
-						   }
-
-					   }
-				   }
-				   else if (i == 2) {
-					   z1 = lc3->Total();
-					   for (int t3 = (tamañopilas - 1); t3 >= 0; t3--) {
-						   if (z1 > t3)
-						   {
-							   colordgvp(lc3->GetValue(y), i, x);
-							   x--;
-							   y++;
-						   }
-						   else
-						   {
-							   gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
-							  
-							   z++;
-						   }
-
-					   }
-				   }
-				   else if (i == 3) {
-					   z1 = lc4->Total();
-					   for (int t4 = (tamañopilas - 1); t4 >= 0; t4--) {
-						   if (z1 > t4)
-						   {
-							   colordgvp(lc4->GetValue(y), i, x);
-							   x--;
-							   y++;
-						   }
-						   else
-						   {
-							   gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
-							 
-							   z++;
-						   }
-
-					   }
-				   }
-				   else if (i == 4) {
-					   z1 = lc5->Total();
-					   for (int t5 = (tamañopilas - 1); t5 >= 0; t5--) {
-						   if (z1 > t5)
-						   {
-							   colordgvp(lc5->GetValue(y), i, x);
-							   x--;
-							   y++;
-						   }
-						   else
-						   {
-							   gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
-							  
-							   z++;
-						   }
-
-					   }
-				   }
-				   else if (i == 5) {
-					   z1 = lc6->Total();
-					   for (int t6 = (tamañopilas - 1); t6 >= 0; t6--) {
-						   if (z1 > t6)
-						   {
-							   colordgvp(lc6->GetValue(y), i, x);
-							   x--;
-							   y++;
-						   }
-						   else
-						   {
-							   gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
-							   
-							   z++;
-						   }
-
-					   }
-				   }
-				   else if (i == 6) {
-					   z1 = lc7->Total();
-					   for (int t7 = (tamañopilas - 1); t7 >= 0; t7--) {
-						   if (z1 > t7)
-						   {
-							   colordgvp(lc7->GetValue(y), i, x);
-							   x--;
-							   y++;
-						   }
-						   else
-						   {
-							   gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
-							  
-							   z++;
-						   }
-
-					   }
-				   }
-				   else if (i == 7) {
-					   z1 = lc8->Total();
-					   for (int t8 = (tamañopilas - 1); t8 >= 0; t8--) {
-						   if (z1 > t8)
-						   {
-							   colordgvp(lc8->GetValue(y), i, x);
-							   x--;
-							   y++;
-						   }
-						   else
-						   {
-							   gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
-							
-							   z++;
-						   }
-
-					   }
-				   }
-			   }
-			   stepss();
-		   }
+	
 
 
 
 
 
-
-	private: void restart() {
-		gameboard_dgv->Rows->Clear();
-		
-		gameboard_dgv->Columns->Clear();
-		
-		gameboard_dgv->ColumnHeadersVisible = false;
-		gameboard_dgv->RowHeadersVisible = false;
-		
-	}
-		   void colordgvp(int nn, int columna, int fila) {
-			   if (nn == 1) {
-				   gameboard_dgv->Rows[fila]->Cells[columna]->Style->BackColor = Color::Black;
-				   
-			   }
-			   else if (nn == 2) {
-				   gameboard_dgv->Rows[fila]->Cells[columna]->Style->BackColor = Color::Blue;
-				   
-			   }
-			   else if (nn == 3) {
-				   gameboard_dgv->Rows[fila]->Cells[columna]->Style->BackColor = Color::Gray;
-				 
-			   }
-			   else if (nn == 4) {
-				   gameboard_dgv->Rows[fila]->Cells[columna]->Style->BackColor = Color::Red;
-				 
-			   }
-			   else if (nn == 5) {
-				   gameboard_dgv->Rows[fila]->Cells[columna]->Style->BackColor = Color::Yellow;
-				 
-			   }
-			   else if (nn == 6) {
-				   gameboard_dgv->Rows[fila]->Cells[columna]->Style->BackColor = Color::Green;
-				 
-			   }
-			   else if (nn == 7) {
-				   gameboard_dgv->Rows[fila]->Cells[columna]->Style->BackColor = Color::Purple;
-				   
-			   }
-			   else if (nn == 8) {
-				   gameboard_dgv->Rows[fila]->Cells[columna]->Style->BackColor = Color::DarkBlue;
-				  
-			   }
-		   }
+	
+	
 
 
 
@@ -1307,20 +953,12 @@ namespace Proyecto1KarlBech1015920 {
 		modo_btn->Visible = false;
 		if (modo_cb->SelectedIndex == 0) {
 
-			origen_cb->Visible = true;
 			choosemode = 1;
-			lbl_Ordenamiento->Visible = true;
-			orden_lbl->Visible = true;
-			orden_lbl->Text = "Pila";
-			origen_btn->Visible = true;
+		
 		}
 		else if (modo_cb->SelectedIndex == 1) {
-			origen_cb->Visible = true;
 			choosemode = 2;
-			lbl_Ordenamiento->Visible = true;
-			orden_lbl->Visible = true;
-			orden_lbl->Text = "Cola";
-			origen_btn->Visible = true;
+			
 		}
 	}
 	private: System::Void origen_btn_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -1562,7 +1200,338 @@ namespace Proyecto1KarlBech1015920 {
 		if (valuebox2 == 0) {
 			if (lc1->Total() < tamañopilas) {
 				lc1->InsertAtEnd(value);
-				colordgv();
+				for (int i = 0; i < p1; i++) {
+					int x = tamañopilas - 1;
+					int y = 0;
+					int z = 0;
+					if (i == 0) {
+						z1 = lc1->Total();
+						for (int t1 = (tamañopilas - 1); t1 >= 0; t1--) {
+							if (z1 > t1)
+							{
+
+								if (lc1->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc1->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc1->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc1->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc1->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc1->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc1->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc1->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+					else if (i == 1) {
+						z1 = lc2->Total();
+						for (int t2 = (tamañopilas - 1); t2 >= 0; t2--) {
+							if (z1 > t2)
+							{
+								if (lc2->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc2->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc2->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc2->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc2->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc2->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc2->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc2->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+					else if (i == 2) {
+						z1 = lc3->Total();
+						for (int t3 = (tamañopilas - 1); t3 >= 0; t3--) {
+							if (z1 > t3)
+							{
+								if (lc3->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc3->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc3->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc3->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc3->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc3->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc3->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc3->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+					else if (i == 3) {
+						z1 = lc4->Total();
+						for (int t4 = (tamañopilas - 1); t4 >= 0; t4--) {
+							if (z1 > t4)
+							{
+								if (lc4->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc4->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc4->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc4->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc4->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc4->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc4->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc4->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+					else if (i == 4) {
+						z1 = lc5->Total();
+						for (int t5 = (tamañopilas - 1); t5 >= 0; t5--) {
+							if (z1 > t5)
+							{
+								if (lc5->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc5->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc5->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc5->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc5->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc5->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc5->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc5->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+					else if (i == 5) {
+						z1 = lc6->Total();
+						for (int t6 = (tamañopilas - 1); t6 >= 0; t6--) {
+							if (z1 > t6)
+							{
+								if (lc6->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc6->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc6->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc6->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc6->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc6->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc6->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc6->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+					else if (i == 6) {
+						z1 = lc7->Total();
+						for (int t7 = (tamañopilas - 1); t7 >= 0; t7--) {
+							if (z1 > t7)
+							{
+								if (lc7->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc7->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc7->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc7->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc7->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc7->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc7->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc7->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+					else if (i == 7) {
+						z1 = lc8->Total();
+						for (int t8 = (tamañopilas - 1); t8 >= 0; t8--) {
+							if (z1 > t8)
+							{
+								if (lc8->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc8->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc8->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc8->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc8->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc8->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc8->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc8->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+				}
+				if (choosemode == 1) {
+					step += "Movimiento: En modo: Pila, " + "P(" + (valuebox + 1) + ") a " + "P(" + (valuebox2 + 1) + ")" + "\r\n";
+				}
+				else if (choosemode == 2) {
+					step += "Movimiento: En modo: Cola, " + "C(" + (valuebox + 1) + ") a " + "C(" + (valuebox2 + 1) + ")" + "\r\n";
+				}
 
 
 			}
@@ -1576,9 +1545,340 @@ namespace Proyecto1KarlBech1015920 {
 			}
 		}
 		else if (valuebox2 == 1) {
-			if (lc2->z < tamañopilas) {
+			if (lc2->Total() < tamañopilas) {
 				lc2->InsertAtEnd(value);
-				colordgv();
+				for (int i = 0; i < p1; i++) {
+					int x = tamañopilas - 1;
+					int y = 0;
+					int z = 0;
+					if (i == 0) {
+						z1 = lc1->Total();
+						for (int t1 = (tamañopilas - 1); t1 >= 0; t1--) {
+							if (z1 > t1)
+							{
+
+								if (lc1->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc1->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc1->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc1->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc1->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc1->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc1->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc1->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+					else if (i == 1) {
+						z1 = lc2->Total();
+						for (int t2 = (tamañopilas - 1); t2 >= 0; t2--) {
+							if (z1 > t2)
+							{
+								if (lc2->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc2->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc2->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc2->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc2->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc2->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc2->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc2->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+					else if (i == 2) {
+						z1 = lc3->Total();
+						for (int t3 = (tamañopilas - 1); t3 >= 0; t3--) {
+							if (z1 > t3)
+							{
+								if (lc3->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc3->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc3->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc3->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc3->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc3->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc3->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc3->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+					else if (i == 3) {
+						z1 = lc4->Total();
+						for (int t4 = (tamañopilas - 1); t4 >= 0; t4--) {
+							if (z1 > t4)
+							{
+								if (lc4->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc4->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc4->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc4->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc4->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc4->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc4->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc4->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+					else if (i == 4) {
+						z1 = lc5->Total();
+						for (int t5 = (tamañopilas - 1); t5 >= 0; t5--) {
+							if (z1 > t5)
+							{
+								if (lc5->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc5->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc5->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc5->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc5->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc5->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc5->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc5->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+					else if (i == 5) {
+						z1 = lc6->Total();
+						for (int t6 = (tamañopilas - 1); t6 >= 0; t6--) {
+							if (z1 > t6)
+							{
+								if (lc6->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc6->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc6->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc6->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc6->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc6->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc6->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc6->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+					else if (i == 6) {
+						z1 = lc7->Total();
+						for (int t7 = (tamañopilas - 1); t7 >= 0; t7--) {
+							if (z1 > t7)
+							{
+								if (lc7->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc7->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc7->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc7->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc7->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc7->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc7->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc7->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+					else if (i == 7) {
+						z1 = lc8->Total();
+						for (int t8 = (tamañopilas - 1); t8 >= 0; t8--) {
+							if (z1 > t8)
+							{
+								if (lc8->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc8->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc8->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc8->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc8->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc8->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc8->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc8->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+				}
+				if (choosemode == 1) {
+					step += "Movimiento: En modo: Pila, " + "P(" + (valuebox + 1) + ") a " + "P(" + (valuebox2 + 1) + ")" + "\r\n";
+				}
+				else if (choosemode == 2) {
+					step += "Movimiento: En modo: Cola, " + "C(" + (valuebox + 1) + ") a " + "C(" + (valuebox2 + 1) + ")" + "\r\n";
+				}
 
 
 			}
@@ -1594,8 +1894,340 @@ namespace Proyecto1KarlBech1015920 {
 		else if (valuebox2 == 2) {
 			if (lc3->Total() < tamañopilas) {
 				lc3->InsertAtEnd(value);
-				colordgv();
-				movimientos++;
+				for (int i = 0; i < p1; i++) {
+					int x = tamañopilas - 1;
+					int y = 0;
+					int z = 0;
+					if (i == 0) {
+						z1 = lc1->Total();
+						for (int t1 = (tamañopilas - 1); t1 >= 0; t1--) {
+							if (z1 > t1)
+							{
+
+								if (lc1->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc1->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc1->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc1->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc1->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc1->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc1->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc1->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+					else if (i == 1) {
+						z1 = lc2->Total();
+						for (int t2 = (tamañopilas - 1); t2 >= 0; t2--) {
+							if (z1 > t2)
+							{
+								if (lc2->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc2->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc2->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc2->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc2->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc2->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc2->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc2->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+					else if (i == 2) {
+						z1 = lc3->Total();
+						for (int t3 = (tamañopilas - 1); t3 >= 0; t3--) {
+							if (z1 > t3)
+							{
+								if (lc3->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc3->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc3->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc3->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc3->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc3->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc3->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc3->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+					else if (i == 3) {
+						z1 = lc4->Total();
+						for (int t4 = (tamañopilas - 1); t4 >= 0; t4--) {
+							if (z1 > t4)
+							{
+								if (lc4->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc4->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc4->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc4->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc4->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc4->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc4->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc4->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+					else if (i == 4) {
+						z1 = lc5->Total();
+						for (int t5 = (tamañopilas - 1); t5 >= 0; t5--) {
+							if (z1 > t5)
+							{
+								if (lc5->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc5->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc5->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc5->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc5->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc5->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc5->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc5->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+					else if (i == 5) {
+						z1 = lc6->Total();
+						for (int t6 = (tamañopilas - 1); t6 >= 0; t6--) {
+							if (z1 > t6)
+							{
+								if (lc6->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc6->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc6->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc6->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc6->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc6->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc6->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc6->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+					else if (i == 6) {
+						z1 = lc7->Total();
+						for (int t7 = (tamañopilas - 1); t7 >= 0; t7--) {
+							if (z1 > t7)
+							{
+								if (lc7->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc7->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc7->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc7->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc7->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc7->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc7->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc7->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+					else if (i == 7) {
+						z1 = lc8->Total();
+						for (int t8 = (tamañopilas - 1); t8 >= 0; t8--) {
+							if (z1 > t8)
+							{
+								if (lc8->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc8->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc8->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc8->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc8->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc8->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc8->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc8->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+				}
+				if (choosemode == 1) {
+					step += "Movimiento: En modo: Pila, " + "P(" + (valuebox + 1) + ") a " + "P(" + (valuebox2 + 1) + ")" + "\r\n";
+				}
+				else if (choosemode == 2) {
+					step += "Movimiento: En modo: Cola, " + "C(" + (valuebox + 1) + ") a " + "C(" + (valuebox2 + 1) + ")" + "\r\n";
+				}
+
+
 			}
 			else {
 				MessageBox::Show("Ya no puede ingresar datos en este grupo", "Advertencia", MessageBoxButtons::OK, MessageBoxIcon::Warning);
@@ -1609,81 +2241,1686 @@ namespace Proyecto1KarlBech1015920 {
 		else if (valuebox2 == 3) {
 			if (lc4->Total() < tamañopilas) {
 				lc4->InsertAtEnd(value);
-				colordgv();
+				for (int i = 0; i < p1; i++) {
+					int x = tamañopilas - 1;
+					int y = 0;
+					int z = 0;
+					if (i == 0) {
+						z1 = lc1->Total();
+						for (int t1 = (tamañopilas - 1); t1 >= 0; t1--) {
+							if (z1 > t1)
+							{
 
+								if (lc1->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc1->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc1->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc1->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc1->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc1->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc1->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc1->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
 
-			}
-			else {
-				MessageBox::Show("Ya no puede ingresar datos en este grupo", "Advertencia", MessageBoxButtons::OK, MessageBoxIcon::Warning);
-				destino_cb->Visible = true;
-				modo_cb->Visible = false;
-				modo_btn->Visible = false;
-				destino_btn->Visible = true;
-				movimientos--;
+						}
+					}
+					else if (i == 1) {
+						z1 = lc2->Total();
+						for (int t2 = (tamañopilas - 1); t2 >= 0; t2--) {
+							if (z1 > t2)
+							{
+								if (lc2->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc2->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc2->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc2->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc2->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc2->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc2->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc2->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+					else if (i == 2) {
+						z1 = lc3->Total();
+						for (int t3 = (tamañopilas - 1); t3 >= 0; t3--) {
+							if (z1 > t3)
+							{
+								if (lc3->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc3->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc3->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc3->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc3->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc3->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc3->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc3->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+					else if (i == 3) {
+						z1 = lc4->Total();
+						for (int t4 = (tamañopilas - 1); t4 >= 0; t4--) {
+							if (z1 > t4)
+							{
+								if (lc4->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc4->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc4->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc4->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc4->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc4->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc4->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc4->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+					else if (i == 4) {
+						z1 = lc5->Total();
+						for (int t5 = (tamañopilas - 1); t5 >= 0; t5--) {
+							if (z1 > t5)
+							{
+								if (lc5->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc5->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc5->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc5->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc5->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc5->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc5->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc5->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+					else if (i == 5) {
+						z1 = lc6->Total();
+						for (int t6 = (tamañopilas - 1); t6 >= 0; t6--) {
+							if (z1 > t6)
+							{
+								if (lc6->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc6->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc6->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc6->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc6->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc6->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc6->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc6->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+					else if (i == 6) {
+						z1 = lc7->Total();
+						for (int t7 = (tamañopilas - 1); t7 >= 0; t7--) {
+							if (z1 > t7)
+							{
+								if (lc7->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc7->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc7->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc7->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc7->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc7->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc7->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc7->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+					else if (i == 7) {
+						z1 = lc8->Total();
+						for (int t8 = (tamañopilas - 1); t8 >= 0; t8--) {
+							if (z1 > t8)
+							{
+								if (lc8->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc8->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc8->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc8->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc8->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc8->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc8->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc8->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+				}
+				if (choosemode == 1) {
+					step += "Movimiento: En modo: Pila, " + "P(" + (valuebox + 1) + ") a " + "P(" + (valuebox2 + 1) + ")" + "\r\n";
+				}
+				else if (choosemode == 2) {
+					step += "Movimiento: En modo: Cola, " + "C(" + (valuebox + 1) + ") a " + "C(" + (valuebox2 + 1) + ")" + "\r\n";
+				}
 			}
 		}
 		else if (valuebox2 == 4) {
 			if (lc5->Total() < tamañopilas) {
 				lc5->InsertAtEnd(value);
-				colordgv();
+				for (int i = 0; i < p1; i++) {
+					int x = tamañopilas - 1;
+					int y = 0;
+					int z = 0;
+					if (i == 0) {
+						z1 = lc1->Total();
+						for (int t1 = (tamañopilas - 1); t1 >= 0; t1--) {
+							if (z1 > t1)
+							{
 
+								if (lc1->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc1->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc1->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc1->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc1->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc1->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc1->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc1->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
 
-			}
-			else {
-				MessageBox::Show("Ya no puede ingresar datos en este grupo", "Advertencia", MessageBoxButtons::OK, MessageBoxIcon::Warning);
-				destino_cb->Visible = true;
-				modo_cb->Visible = false;
-				modo_btn->Visible = false;
-				destino_btn->Visible = true;
-				movimientos--;
+						}
+					}
+					else if (i == 1) {
+						z1 = lc2->Total();
+						for (int t2 = (tamañopilas - 1); t2 >= 0; t2--) {
+							if (z1 > t2)
+							{
+								if (lc2->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc2->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc2->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc2->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc2->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc2->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc2->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc2->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+					else if (i == 2) {
+						z1 = lc3->Total();
+						for (int t3 = (tamañopilas - 1); t3 >= 0; t3--) {
+							if (z1 > t3)
+							{
+								if (lc3->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc3->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc3->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc3->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc3->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc3->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc3->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc3->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+					else if (i == 3) {
+						z1 = lc4->Total();
+						for (int t4 = (tamañopilas - 1); t4 >= 0; t4--) {
+							if (z1 > t4)
+							{
+								if (lc4->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc4->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc4->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc4->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc4->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc4->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc4->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc4->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+					else if (i == 4) {
+						z1 = lc5->Total();
+						for (int t5 = (tamañopilas - 1); t5 >= 0; t5--) {
+							if (z1 > t5)
+							{
+								if (lc5->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc5->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc5->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc5->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc5->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc5->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc5->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc5->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+					else if (i == 5) {
+						z1 = lc6->Total();
+						for (int t6 = (tamañopilas - 1); t6 >= 0; t6--) {
+							if (z1 > t6)
+							{
+								if (lc6->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc6->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc6->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc6->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc6->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc6->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc6->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc6->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+					else if (i == 6) {
+						z1 = lc7->Total();
+						for (int t7 = (tamañopilas - 1); t7 >= 0; t7--) {
+							if (z1 > t7)
+							{
+								if (lc7->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc7->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc7->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc7->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc7->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc7->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc7->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc7->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+					else if (i == 7) {
+						z1 = lc8->Total();
+						for (int t8 = (tamañopilas - 1); t8 >= 0; t8--) {
+							if (z1 > t8)
+							{
+								if (lc8->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc8->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc8->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc8->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc8->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc8->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc8->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc8->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+				}
+				if (choosemode == 1) {
+					step += "Movimiento: En modo: Pila, " + "P(" + (valuebox + 1) + ") a " + "P(" + (valuebox2 + 1) + ")" + "\r\n";
+				}
+				else if (choosemode == 2) {
+					step += "Movimiento: En modo: Cola, " + "C(" + (valuebox + 1) + ") a " + "C(" + (valuebox2 + 1) + ")" + "\r\n";
+				}
 			}
 		}
 		else if (valuebox2 == 5) {
 			if (lc6->Total() < tamañopilas) {
 				lc6->InsertAtEnd(value);
-				colordgv();
+				for (int i = 0; i < p1; i++) {
+					int x = tamañopilas - 1;
+					int y = 0;
+					int z = 0;
+					if (i == 0) {
+						z1 = lc1->Total();
+						for (int t1 = (tamañopilas - 1); t1 >= 0; t1--) {
+							if (z1 > t1)
+							{
 
+								if (lc1->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc1->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc1->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc1->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc1->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc1->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc1->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc1->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
 
-			}
-			else {
-				MessageBox::Show("Ya no puede ingresar datos en este grupo", "Advertencia", MessageBoxButtons::OK, MessageBoxIcon::Warning);
-				destino_cb->Visible = true;
-				modo_cb->Visible = false;
-				modo_btn->Visible = false;
-				destino_btn->Visible = true;
-				movimientos--;
+						}
+					}
+					else if (i == 1) {
+						z1 = lc2->Total();
+						for (int t2 = (tamañopilas - 1); t2 >= 0; t2--) {
+							if (z1 > t2)
+							{
+								if (lc2->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc2->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc2->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc2->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc2->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc2->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc2->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc2->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+					else if (i == 2) {
+						z1 = lc3->Total();
+						for (int t3 = (tamañopilas - 1); t3 >= 0; t3--) {
+							if (z1 > t3)
+							{
+								if (lc3->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc3->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc3->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc3->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc3->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc3->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc3->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc3->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+					else if (i == 3) {
+						z1 = lc4->Total();
+						for (int t4 = (tamañopilas - 1); t4 >= 0; t4--) {
+							if (z1 > t4)
+							{
+								if (lc4->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc4->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc4->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc4->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc4->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc4->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc4->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc4->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+					else if (i == 4) {
+						z1 = lc5->Total();
+						for (int t5 = (tamañopilas - 1); t5 >= 0; t5--) {
+							if (z1 > t5)
+							{
+								if (lc5->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc5->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc5->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc5->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc5->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc5->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc5->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc5->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+					else if (i == 5) {
+						z1 = lc6->Total();
+						for (int t6 = (tamañopilas - 1); t6 >= 0; t6--) {
+							if (z1 > t6)
+							{
+								if (lc6->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc6->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc6->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc6->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc6->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc6->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc6->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc6->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+					else if (i == 6) {
+						z1 = lc7->Total();
+						for (int t7 = (tamañopilas - 1); t7 >= 0; t7--) {
+							if (z1 > t7)
+							{
+								if (lc7->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc7->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc7->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc7->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc7->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc7->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc7->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc7->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+					else if (i == 7) {
+						z1 = lc8->Total();
+						for (int t8 = (tamañopilas - 1); t8 >= 0; t8--) {
+							if (z1 > t8)
+							{
+								if (lc8->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc8->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc8->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc8->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc8->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc8->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc8->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc8->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+				}
+				if (choosemode == 1) {
+					step += "Movimiento: En modo: Pila, " + "P(" + (valuebox + 1) + ") a " + "P(" + (valuebox2 + 1) + ")" + "\r\n";
+				}
+				else if (choosemode == 2) {
+					step += "Movimiento: En modo: Cola, " + "C(" + (valuebox + 1) + ") a " + "C(" + (valuebox2 + 1) + ")" + "\r\n";
+				}
 			}
 		}
 		else if (valuebox2 == 6) {
 			if (lc7->Total() < tamañopilas) {
 				lc7->InsertAtEnd(value);
-				colordgv();
+				for (int i = 0; i < p1; i++) {
+					int x = tamañopilas - 1;
+					int y = 0;
+					int z = 0;
+					if (i == 0) {
+						z1 = lc1->Total();
+						for (int t1 = (tamañopilas - 1); t1 >= 0; t1--) {
+							if (z1 > t1)
+							{
 
+								if (lc1->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc1->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc1->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc1->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc1->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc1->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc1->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc1->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
 
-			}
-			else {
-				MessageBox::Show("Ya no puede ingresar datos en este grupo", "Advertencia", MessageBoxButtons::OK, MessageBoxIcon::Warning);
-				destino_cb->Visible = true;
-				modo_cb->Visible = false;
-				modo_btn->Visible = false;
-				destino_btn->Visible = true;
-				movimientos--;
+						}
+					}
+					else if (i == 1) {
+						z1 = lc2->Total();
+						for (int t2 = (tamañopilas - 1); t2 >= 0; t2--) {
+							if (z1 > t2)
+							{
+								if (lc2->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc2->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc2->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc2->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc2->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc2->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc2->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc2->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+					else if (i == 2) {
+						z1 = lc3->Total();
+						for (int t3 = (tamañopilas - 1); t3 >= 0; t3--) {
+							if (z1 > t3)
+							{
+								if (lc3->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc3->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc3->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc3->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc3->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc3->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc3->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc3->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+					else if (i == 3) {
+						z1 = lc4->Total();
+						for (int t4 = (tamañopilas - 1); t4 >= 0; t4--) {
+							if (z1 > t4)
+							{
+								if (lc4->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc4->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc4->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc4->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc4->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc4->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc4->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc4->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+					else if (i == 4) {
+						z1 = lc5->Total();
+						for (int t5 = (tamañopilas - 1); t5 >= 0; t5--) {
+							if (z1 > t5)
+							{
+								if (lc5->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc5->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc5->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc5->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc5->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc5->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc5->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc5->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+					else if (i == 5) {
+						z1 = lc6->Total();
+						for (int t6 = (tamañopilas - 1); t6 >= 0; t6--) {
+							if (z1 > t6)
+							{
+								if (lc6->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc6->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc6->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc6->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc6->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc6->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc6->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc6->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+					else if (i == 6) {
+						z1 = lc7->Total();
+						for (int t7 = (tamañopilas - 1); t7 >= 0; t7--) {
+							if (z1 > t7)
+							{
+								if (lc7->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc7->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc7->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc7->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc7->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc7->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc7->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc7->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+					else if (i == 7) {
+						z1 = lc8->Total();
+						for (int t8 = (tamañopilas - 1); t8 >= 0; t8--) {
+							if (z1 > t8)
+							{
+								if (lc8->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc8->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc8->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc8->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc8->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc8->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc8->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc8->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+				}
+				if (choosemode == 1) {
+					step += "Movimiento: En modo: Pila, " + "P(" + (valuebox + 1) + ") a " + "P(" + (valuebox2 + 1) + ")" + "\r\n";
+				}
+				else if (choosemode == 2) {
+					step += "Movimiento: En modo: Cola, " + "C(" + (valuebox + 1) + ") a " + "C(" + (valuebox2 + 1) + ")" + "\r\n";
+				}
 			}
 		}
 		else if (valuebox2 == 7) {
 			if (lc8->Total() < tamañopilas) {
 				lc8->InsertAtEnd(value);
-				colordgv();
+				for (int i = 0; i < p1; i++) {
+					int x = tamañopilas - 1;
+					int y = 0;
+					int z = 0;
+					if (i == 0) {
+						z1 = lc1->Total();
+						for (int t1 = (tamañopilas - 1); t1 >= 0; t1--) {
+							if (z1 > t1)
+							{
 
+								if (lc1->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc1->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc1->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc1->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc1->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc1->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc1->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc1->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
 
-			}
-			else {
-				MessageBox::Show("Ya no puede ingresar datos en este grupo", "Advertencia", MessageBoxButtons::OK, MessageBoxIcon::Warning);
-				destino_cb->Visible = true;
-				modo_cb->Visible = false;
-				modo_btn->Visible = false;
-				destino_btn->Visible = true;
-				movimientos--;
+						}
+					}
+					else if (i == 1) {
+						z1 = lc2->Total();
+						for (int t2 = (tamañopilas - 1); t2 >= 0; t2--) {
+							if (z1 > t2)
+							{
+								if (lc2->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc2->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc2->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc2->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc2->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc2->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc2->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc2->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+					else if (i == 2) {
+						z1 = lc3->Total();
+						for (int t3 = (tamañopilas - 1); t3 >= 0; t3--) {
+							if (z1 > t3)
+							{
+								if (lc3->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc3->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc3->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc3->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc3->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc3->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc3->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc3->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+					else if (i == 3) {
+						z1 = lc4->Total();
+						for (int t4 = (tamañopilas - 1); t4 >= 0; t4--) {
+							if (z1 > t4)
+							{
+								if (lc4->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc4->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc4->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc4->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc4->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc4->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc4->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc4->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+					else if (i == 4) {
+						z1 = lc5->Total();
+						for (int t5 = (tamañopilas - 1); t5 >= 0; t5--) {
+							if (z1 > t5)
+							{
+								if (lc5->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc5->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc5->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc5->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc5->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc5->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc5->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc5->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+					else if (i == 5) {
+						z1 = lc6->Total();
+						for (int t6 = (tamañopilas - 1); t6 >= 0; t6--) {
+							if (z1 > t6)
+							{
+								if (lc6->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc6->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc6->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc6->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc6->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc6->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc6->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc6->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+					else if (i == 6) {
+						z1 = lc7->Total();
+						for (int t7 = (tamañopilas - 1); t7 >= 0; t7--) {
+							if (z1 > t7)
+							{
+								if (lc7->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc7->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc7->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc7->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc7->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc7->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc7->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc7->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+					else if (i == 7) {
+						z1 = lc8->Total();
+						for (int t8 = (tamañopilas - 1); t8 >= 0; t8--) {
+							if (z1 > t8)
+							{
+								if (lc8->GetValue(y) == 1) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Black;
+								}
+								else if (lc8->GetValue(y) == 2) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Blue;
+								}
+								else if (lc8->GetValue(y) == 3) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Gray;
+								}
+								else if (lc8->GetValue(y) == 4) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Red;
+								}
+								else if (lc8->GetValue(y) == 5) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Yellow;
+								}
+								else if (lc8->GetValue(y) == 6) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Green;
+								}
+								else if (lc8->GetValue(y) == 7) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::Purple;
+								}
+								else if (lc8->GetValue(y) == 8) {
+									gameboard_dgv->Rows[x]->Cells[i]->Style->BackColor = Color::DarkBlue;
+								}
+								x--;
+								y++;
+							}
+							else
+							{
+								gameboard_dgv->Rows[z]->Cells[i]->Style->BackColor = Color::White;
+								z++;
+							}
+
+						}
+					}
+				}
+				if (choosemode == 1) {
+					step += "Movimiento: En modo: Pila, " + "P(" + (valuebox + 1) + ") a " + "P(" + (valuebox2 + 1) + ")" + "\r\n";
+				}
+				else if (choosemode == 2) {
+					step += "Movimiento: En modo: Cola, " + "C(" + (valuebox + 1) + ") a " + "C(" + (valuebox2 + 1) + ")" + "\r\n";
+				}
 			}
 		}
 	}
@@ -1942,243 +4179,1188 @@ namespace Proyecto1KarlBech1015920 {
 		}
 	}
 
-		   void stepss() {
-			   if (p1 == 2) {
-				   for (int i = 1; i < 3; i++)
-				   {
-					   if (choosemode == 1) {
-						   step += "Movimiento: En modo: Pila, " + "D(" + (i)+") a " + "P(" + (i)+")" + "\r\n";
-					   }
-					   else if (choosemode == 2) {
-						   step += "Movimiento: En modo: Cola, " + "D(" + (i)+") a " + "P(" + (i)+")" + "\r\n";
-					   }
-				   }
-			   }
-			   else if (p1 == 3) {
-				   for (int i = 1; i < 4; i++)
-				   {
-					   if (choosemode == 1) {
-						   step += "Movimiento: En modo: Pila, " + "D(" + (i)+") a " + "P(" + (i)+")" + "\r\n";
-					   }
-					   else if (choosemode == 2) {
-						   step += "Movimiento: En modo: Cola, " + "D(" + (i)+") a " + "P(" + (i)+")" + "\r\n";
-					   }
-				   }
-			   }
-			   else if (p1 == 4) {
-				   for (int i = 1; i < 5; i++)
-				   {
-					   if (choosemode == 1) {
-						   step += "Movimiento: En modo: Pila, " + "D(" + (i)+") a " + "P(" + (i)+")" + "\r\n";
-					   }
-					   else if (choosemode == 2) {
-						   step += "Movimiento: En modo: Cola, " + "D(" + (i)+") a " + "P(" + (i)+")" + "\r\n";
-					   }
-				   }
-			   }
-			   else if (p1 == 5) {
-				   for (int i = 1; i < 6; i++)
-				   {
-					   if (choosemode == 1) {
-						   step += "Movimiento: En modo: Pila, " + "D(" + (i)+") a " + "P(" + (i)+")" + "\r\n";
-					   }
-					   else if (choosemode == 2) {
-						   step += "Movimiento: En modo: Cola, " + "D(" + (i)+") a " + "P(" + (i)+")" + "\r\n";
-					   }
-				   }
-			   }
-			   else if (p1 == 6) {
-				   for (int i = 1; i < 7; i++)
-				   {
-					   if (choosemode == 1) {
-						   step += "Movimiento: En modo: Pila, " + "D(" + (i)+") a " + "P(" + (i)+")" + "\r\n";
-					   }
-					   else if (choosemode == 2) {
-						   step += "Movimiento: En modo: Cola, " + "D(" + (i)+") a " + "P(" + (i)+")" + "\r\n";
-					   }
-				   }
-			   }
-			   else if (p1 == 7) {
-				   for (int i = 1; i < 8; i++)
-				   {
-					   if (choosemode == 1) {
-						   step += "Movimiento: En modo: Pila, " + "D(" + (i)+") a " + "P(" + (i)+")" + "\r\n";
-					   }
-					   else if (choosemode == 2) {
-						   step += "Movimiento: En modo: Cola, " + "D(" + (i)+") a " + "P(" + (i)+")" + "\r\n";
-					   }
-				   }
-			   }
-			   else if (p1 == 8) {
-				   for (int i = 1; i < 9; i++)
-				   {
-					   if (choosemode == 1) {
-						   step += "Movimiento: En modo: Pila, " + "D(" + (i)+") a " + "P(" + (i)+")" + "\r\n";
-					   }
-					   else if (choosemode == 2) {
-						   step += "Movimiento: En modo: Cola, " + "D(" + (i)+") a " + "P(" + (i)+")" + "\r\n";
-					   }
-				   }
-			   }
-		   }
+		   
+
+
 	private: System::Void ordenarnueva_btn_Click(System::Object^ sender, System::EventArgs^ e) {
-		int d, d2 = 0, d3 = 0, d4 = 0, d5 = 0, d6 = 0, d7 = 0, d8 = 0;
-		
-		
-		if (choosemode == 2) {
-			int xyz = 1;
-			d = todoslosdatos->GetValueAtStart();
-			for (int i = 0; i < todoslosdatos->Total(); i++) {
-				if (todoslosdatos->GetValue(i) == d) {
 
-				}
-				else if (xyz == 1) {
-					d2 = todoslosdatos->GetValue(i);
-					xyz++;
-				}
-				else if (xyz == 2) {
-					d3 = todoslosdatos->GetValue(i);
-					xyz++;
-				}
-				else if (xyz == 3) {
-					d4 = todoslosdatos->GetValue(i);
-					xyz++;
-				}
-				else if (xyz == 4) {
-					d5 = todoslosdatos->GetValue(i);
-					xyz++;
-				}
-				else if (xyz == 5) {
-					d6 = todoslosdatos->GetValue(i);
-					xyz++;
-				}
-				else if (xyz == 6) {
-					d7 = todoslosdatos->GetValue(i);
-					xyz++;
-				}
-				else if (xyz == 7) {
-					d8 = todoslosdatos->GetValue(i);
-					xyz++;
-				}
-			}
-
-			lc1->Borrar();
-			lc2->Borrar();
-			lc3->Borrar();
-			lc4->Borrar();
-			lc5->Borrar();
-			lc6->Borrar();
-			lc7->Borrar();
-			lc8->Borrar();
-
-
-			for (int i = 0; i < todoslosdatos->Total(); i++) {
-				if (todoslosdatos->GetValue(i) == d) {
-					lc1->InsertAtEnd(d);
-				}
-				else if (todoslosdatos->GetValue(i) == d2) {
-					lc2->InsertAtEnd(d2);
-				}
-				else if (todoslosdatos->GetValue(i) == d3) {
-					lc3->InsertAtEnd(d3);
-				}
-				else if (todoslosdatos->GetValue(i) == d4) {
-					lc4->InsertAtEnd(d4);
-				}
-				else if (todoslosdatos->GetValue(i) == d5) {
-					lc5->InsertAtEnd(d5);
-				}
-				else if (todoslosdatos->GetValue(i) == d6) {
-					lc6->InsertAtEnd(d6);
-				}
-				else if (todoslosdatos->GetValue(i) == d7) {
-					lc7->InsertAtEnd(d7);
-				}
-				else if (todoslosdatos->GetValue(i) == d8) {
-					lc8->InsertAtEnd(d8);
-				}
-			}
-			colordgv();
-		}
-		else
+		int num, x1 = tamañopilas - 1, x2 = tamañopilas - 1, x3 = tamañopilas - 1, x4 = tamañopilas - 1, x5 = tamañopilas - 1, x6 = tamañopilas - 1, x7 = tamañopilas - 1, x8 = tamañopilas - 1,xc1 = 0, xc2 = 0, xc3 = 0, xc4 = 0, xc5 = 0, xc6 = 0, xc7 = 0, xc8 = 0;
+		while (lc1->isEmpty() != true)
 		{
-			int xyz = 1;
-			d = todoslosdatos->GetValueAtEnd();
-			for (int i = 0; i < todoslosdatos->Total(); i++) {
-				if (todoslosdatos->GetValue(i) == d) {
+			if (choosemode == 2)
+			{
+				num = lc1->GetValueAtEnd();
+			}
+			else
+			{
+				num = lc1->GetValueAtEnd();
+			}
+			if (num == 1)
+			{
+				miListT1->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc1->ExtractAtStart();
+					dataGridView2->Rows[xc1]->Cells[0]->Style->BackColor = Color::Green;
+					xc1++;
+				}
+				else
+				{
+					lc1->ExtractAtEnd();
+					dataGridView2->Rows[x1]->Cells[0]->Style->BackColor = Color::Green;
+					x1--;
+				}
+				
+			}
+			else if (num == 2)
+			{
+				miListT2->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc1->ExtractAtStart();
+					dataGridView2->Rows[xc2]->Cells[1]->Style->BackColor = Color::Green;
+					xc2++;
+				}
+				else
+				{
+					lc1->ExtractAtEnd();
+					dataGridView2->Rows[x2]->Cells[1]->Style->BackColor = Color::Red;
+					x2--;
+				}
+				
+			}
+			else if (num == 3)
+			{
+				miListT3->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc1->ExtractAtStart();
+					dataGridView2->Rows[xc3]->Cells[2]->Style->BackColor = Color::Green;
+					xc3++;
+				}
+				else
+				{
+					lc1->ExtractAtEnd();
+					dataGridView2->Rows[x3]->Cells[2]->Style->BackColor = Color::Yellow;
+					x3--;
+				}
+				
+			}
+			else if (num == 4)
+			{
+				miListT4->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc1->ExtractAtStart();
+					dataGridView2->Rows[xc4]->Cells[3]->Style->BackColor = Color::Green;
+					xc4++;
+				}
+				else
+				{
+					lc1->ExtractAtEnd();
+					dataGridView2->Rows[x4]->Cells[3]->Style->BackColor = Color::Purple;
+					x4--;
+				}
+				
+			}
+			else if (num == 5)
+			{
+				miListT5->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc1->ExtractAtStart();
+					dataGridView2->Rows[xc4]->Cells[4]->Style->BackColor = Color::Green;
+					xc5++;
+				}
+				else
+				{
+					lc1->ExtractAtEnd();
+					dataGridView2->Rows[x4]->Cells[4]->Style->BackColor = Color::Black;
+					x5--;
+				}
 
+			}
+			else if (num == 6)
+			{
+				miListT6->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc1->ExtractAtStart();
+					dataGridView2->Rows[xc4]->Cells[5]->Style->BackColor = Color::Green;
+					xc6++;
 				}
-				else if (xyz == 1) {
-					d2 = todoslosdatos->GetValue(i);
-					xyz++;
+				else
+				{
+					lc1->ExtractAtEnd();
+					dataGridView2->Rows[x4]->Cells[5]->Style->BackColor = Color::Blue;
+					x6--;
 				}
-				else if (xyz == 2) {
-					d3 = todoslosdatos->GetValue(i);
-					xyz++;
-				}
-				else if (xyz == 3) {
-					d4 = todoslosdatos->GetValue(i);
-					xyz++;
-				}
-				else if (xyz == 4) {
-					d5 = todoslosdatos->GetValue(i);
-					xyz++;
-				}
-				else if (xyz == 5) {
-					d6 = todoslosdatos->GetValue(i);
-					xyz++;
-				}
-				else if (xyz == 6) {
-					d7 = todoslosdatos->GetValue(i);
-					xyz++;
-				}
-				else if (xyz == 7) {
-					d8 = todoslosdatos->GetValue(i);
-					xyz++;
-				}
+
+			}
+			else if (num == 7)
+			{
+			miListT7->InsertAtStart(num);
+			if (choosemode == 2)
+			{
+				lc1->ExtractAtStart();
+				dataGridView2->Rows[xc4]->Cells[6]->Style->BackColor = Color::Green;
+				xc7++;
+			}
+			else
+			{
+				lc1->ExtractAtEnd();
+				dataGridView2->Rows[x4]->Cells[6]->Style->BackColor = Color::Gray;
+				x7--;
 			}
 
-			lc1->Borrar();
-			lc2->Borrar();
-			lc3->Borrar();
-			lc4->Borrar();
-			lc5->Borrar();
-			lc6->Borrar();
-			lc7->Borrar();
-			lc8->Borrar();
-
-
-			for (int i = 0; i < todoslosdatos->Total(); i++) {
-				if (todoslosdatos->GetValue(i) == d) {
-					lc1->InsertAtEnd(d);
-				}
-				else if (todoslosdatos->GetValue(i) == d2) {
-					lc2->InsertAtEnd(d2);
-				}
-				else if (todoslosdatos->GetValue(i) == d3) {
-					lc3->InsertAtEnd(d3);
-				}
-				else if (todoslosdatos->GetValue(i) == d4) {
-					lc4->InsertAtEnd(d4);
-				}
-				else if (todoslosdatos->GetValue(i) == d5) {
-					lc5->InsertAtEnd(d5);
-				}
-				else if (todoslosdatos->GetValue(i) == d6) {
-					lc6->InsertAtEnd(d6);
-				}
-				else if (todoslosdatos->GetValue(i) == d7) {
-					lc7->InsertAtEnd(d7);
-				}
-				else if (todoslosdatos->GetValue(i) == d8) {
-					lc8->InsertAtEnd(d8);
-				}
 			}
-			colordgv();
-		
-	
-	
+			else if (num == 8)
+			{
+			miListT8->InsertAtStart(num);
+			if (choosemode == 2)
+			{
+				lc1->ExtractAtStart();
+				dataGridView2->Rows[xc4]->Cells[7]->Style->BackColor = Color::Green;
+				xc8++;
+			}
+			else
+			{
+				lc1->ExtractAtEnd();
+				dataGridView2->Rows[x4]->Cells[7]->Style->BackColor = Color::DarkBlue;
+				x8--;
+			}
 
+			}
+
+		}
+		while (lc2->isEmpty() != true)
+		{
+			if (choosemode == 2)
+			{
+				num = lc2->GetValueAtEnd();
+			}
+			else
+			{
+				num = lc2->GetValueAtEnd();
+			}
+			if (num == 1)
+			{
+				miListT1->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc2->ExtractAtStart();
+					dataGridView2->Rows[xc1]->Cells[0]->Style->BackColor = Color::Green;
+					xc1++;
+				}
+				else
+				{
+					lc2->ExtractAtEnd();
+					dataGridView2->Rows[x1]->Cells[0]->Style->BackColor = Color::Green;
+					x1--;
+				}
+				
+			}
+			else if (num == 2)
+			{
+				miListT2->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc2->ExtractAtStart();
+					dataGridView2->Rows[xc2]->Cells[1]->Style->BackColor = Color::Green;
+					xc2++;
+				}
+				else
+				{
+					lc2->ExtractAtEnd();
+					dataGridView2->Rows[x2]->Cells[1]->Style->BackColor = Color::Red;
+					x2--;
+				}
+				
+			}
+			else if (num == 3)
+			{
+				miListT3->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc2->ExtractAtStart();
+					dataGridView2->Rows[xc3]->Cells[2]->Style->BackColor = Color::Green;
+					xc3++;
+				}
+				else
+				{
+					lc2->ExtractAtEnd();
+					dataGridView2->Rows[x3]->Cells[2]->Style->BackColor = Color::Yellow;
+					x3--;
+				}
+				
+			}
+			else if (num == 4)
+			{
+				lc4->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc2->ExtractAtStart();
+					dataGridView2->Rows[xc4]->Cells[3]->Style->BackColor = Color::Green;
+					xc4++;
+				}
+				else
+				{
+					lc2->ExtractAtEnd();
+					dataGridView2->Rows[x4]->Cells[3]->Style->BackColor = Color::Purple;
+					x4--;
+				}
+				
+			}
+			else if (num == 5)
+			{
+				miListT5->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc2->ExtractAtStart();
+					dataGridView2->Rows[xc4]->Cells[4]->Style->BackColor = Color::Green;
+					xc5++;
+				}
+				else
+				{
+					lc2->ExtractAtEnd();
+					dataGridView2->Rows[x4]->Cells[4]->Style->BackColor = Color::Black;
+					x5--;
+				}
+
+			}
+			else if (num == 6)
+			{
+				miListT6->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc2->ExtractAtStart();
+					dataGridView2->Rows[xc4]->Cells[5]->Style->BackColor = Color::Green;
+					xc6++;
+				}
+				else
+				{
+					lc2->ExtractAtEnd();
+					dataGridView2->Rows[x4]->Cells[5]->Style->BackColor = Color::Blue;
+					x6--;
+				}
+
+			}
+			else if (num == 7)
+			{
+				miListT7->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc2->ExtractAtStart();
+					dataGridView2->Rows[xc4]->Cells[6]->Style->BackColor = Color::Green;
+					xc7++;
+				}
+				else
+				{
+					lc2->ExtractAtEnd();
+					dataGridView2->Rows[x4]->Cells[6]->Style->BackColor = Color::Gray;
+					x7--;
+				}
+
+			}
+			else if (num == 8)
+			{
+				miListT8->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc2->ExtractAtStart();
+					dataGridView2->Rows[xc4]->Cells[7]->Style->BackColor = Color::Green;
+					xc8++;
+				}
+				else
+				{
+					lc2->ExtractAtEnd();
+					dataGridView2->Rows[x4]->Cells[7]->Style->BackColor = Color::DarkBlue;
+					x8--;
+				}
+
+			}
+		}
+		while (lc3->isEmpty() != true)
+		{
+			if (choosemode == 2)
+			{
+				num = lc3->GetValueAtEnd();
+			}
+			else
+			{
+				num = lc3->GetValueAtEnd();
+			}
+			if (num == 1)
+			{
+				miListT1->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc3->ExtractAtStart();
+					dataGridView2->Rows[xc1]->Cells[0]->Style->BackColor = Color::Green;
+					xc1++;
+				}
+				else
+				{
+					lc3->ExtractAtEnd();
+					dataGridView2->Rows[x1]->Cells[0]->Style->BackColor = Color::Green;
+					x1--;
+				}
+				
+			}
+			else if (num == 2)
+			{
+				miListT2->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc3->ExtractAtStart();
+					dataGridView2->Rows[xc2]->Cells[1]->Style->BackColor = Color::Green;
+					xc2++;
+				}
+				else
+				{
+					lc3->ExtractAtEnd();
+					dataGridView2->Rows[x2]->Cells[1]->Style->BackColor = Color::Red;
+					x2--;
+				}
+				
+			}
+			else if (num == 3)
+			{
+				miListT3->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc3->ExtractAtStart();
+					dataGridView2->Rows[xc3]->Cells[2]->Style->BackColor = Color::Green;
+					xc3++;
+				}
+				else
+				{
+					lc3->ExtractAtEnd();
+					dataGridView2->Rows[x3]->Cells[2]->Style->BackColor = Color::Yellow;
+					x3--;
+				}
+				
+			}
+			else if (num == 4)
+			{
+				lc4->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc3->ExtractAtStart();
+					dataGridView2->Rows[xc4]->Cells[3]->Style->BackColor = Color::Green;
+					xc4++;
+				}
+				else
+				{
+					lc3->ExtractAtEnd();
+					dataGridView2->Rows[x4]->Cells[3]->Style->BackColor = Color::Purple;
+					x4--;
+				}
+				
+			}
+			else if (num == 5)
+			{
+				miListT5->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc3->ExtractAtStart();
+					dataGridView2->Rows[xc4]->Cells[4]->Style->BackColor = Color::Green;
+					xc5++;
+				}
+				else
+				{
+					lc3->ExtractAtEnd();
+					dataGridView2->Rows[x4]->Cells[4]->Style->BackColor = Color::Black;
+					x5--;
+				}
+
+			}
+			else if (num == 6)
+			{
+				miListT6->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc3->ExtractAtStart();
+					dataGridView2->Rows[xc4]->Cells[5]->Style->BackColor = Color::Green;
+					xc6++;
+				}
+				else
+				{
+					lc3->ExtractAtEnd();
+					dataGridView2->Rows[x4]->Cells[5]->Style->BackColor = Color::Blue;
+					x6--;
+				}
+
+			}
+			else if (num == 7)
+			{
+			miListT7->InsertAtStart(num);
+			if (choosemode == 2)
+			{
+				lc3->ExtractAtStart();
+				dataGridView2->Rows[xc4]->Cells[6]->Style->BackColor = Color::Green;
+				xc7++;
+			}
+			else
+			{
+				lc3->ExtractAtEnd();
+				dataGridView2->Rows[x4]->Cells[6]->Style->BackColor = Color::Gray;
+				x7--;
+			}
+
+			}
+			else if (num == 8)
+			{
+			miListT8->InsertAtStart(num);
+			if (choosemode == 2)
+			{
+				lc3->ExtractAtStart();
+				dataGridView2->Rows[xc4]->Cells[7]->Style->BackColor = Color::Green;
+				xc8++;
+			}
+			else
+			{
+				lc3->ExtractAtEnd();
+				dataGridView2->Rows[x4]->Cells[7]->Style->BackColor = Color::DarkBlue;
+				x8--;
+			}
+
+			}
+		}
+		while (lc4->isEmpty() != true)
+		{
+			if (choosemode == 2)
+			{
+				num = lc4->GetValueAtEnd();
+			}
+			else
+			{
+				num = lc4->GetValueAtEnd();
+			}
+			if (num == 1)
+			{
+				miListT1->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc4->ExtractAtStart();
+					dataGridView2->Rows[xc1]->Cells[0]->Style->BackColor = Color::Green;
+					xc1++;
+				}
+				else
+				{
+					lc4->ExtractAtEnd();
+					dataGridView2->Rows[x1]->Cells[0]->Style->BackColor = Color::Green;
+					x1--;
+				}
+				
+			}
+			else if (num == 2)
+			{
+				miListT2->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc4->ExtractAtStart();
+					dataGridView2->Rows[xc2]->Cells[1]->Style->BackColor = Color::Green;
+					xc2++;
+				}
+				else
+				{
+					lc4->ExtractAtEnd();
+					dataGridView2->Rows[x2]->Cells[1]->Style->BackColor = Color::Red;
+					x2--;
+				}
+				
+			}
+			else if (num == 3)
+			{
+				miListT3->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc4->ExtractAtStart();
+					dataGridView2->Rows[xc3]->Cells[2]->Style->BackColor = Color::Green;
+					xc3++;
+				}
+				else
+				{
+					lc4->ExtractAtEnd();
+					dataGridView2->Rows[x3]->Cells[2]->Style->BackColor = Color::Yellow;
+					x3--;
+				}
+				
+			}
+			else if (num == 4)
+			{
+				lc4->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc4->ExtractAtStart();
+					dataGridView2->Rows[xc4]->Cells[3]->Style->BackColor = Color::Green;
+					xc4++;
+				}
+				else
+				{
+					lc4->ExtractAtEnd();
+					dataGridView2->Rows[x4]->Cells[3]->Style->BackColor = Color::Purple;
+					x4--;
+				}
+				
+			}
+			else if (num == 5)
+			{
+				miListT5->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc4->ExtractAtStart();
+					dataGridView2->Rows[xc4]->Cells[4]->Style->BackColor = Color::Green;
+					xc5++;
+				}
+				else
+				{
+					lc4->ExtractAtEnd();
+					dataGridView2->Rows[x4]->Cells[4]->Style->BackColor = Color::Black;
+					x5--;
+				}
+
+			}
+			else if (num == 6)
+			{
+				miListT6->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc4->ExtractAtStart();
+					dataGridView2->Rows[xc4]->Cells[5]->Style->BackColor = Color::Green;
+					xc6++;
+				}
+				else
+				{
+					lc4->ExtractAtEnd();
+					dataGridView2->Rows[x4]->Cells[5]->Style->BackColor = Color::Blue;
+					x6--;
+				}
+
+			}
+			else if (num == 7)
+			{
+				miListT7->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc4->ExtractAtStart();
+					dataGridView2->Rows[xc4]->Cells[6]->Style->BackColor = Color::Green;
+					xc7++;
+				}
+				else
+				{
+					lc4->ExtractAtEnd();
+					dataGridView2->Rows[x4]->Cells[6]->Style->BackColor = Color::Gray;
+					x7--;
+				}
+
+			}
+			else if (num == 8)
+			{
+				miListT8->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc4->ExtractAtStart();
+					dataGridView2->Rows[xc4]->Cells[7]->Style->BackColor = Color::Green;
+					xc8++;
+				}
+				else
+				{
+					lc4->ExtractAtEnd();
+					dataGridView2->Rows[x4]->Cells[7]->Style->BackColor = Color::DarkBlue;
+					x8--;
+				}
+
+			}
+		}
+		while (lc5->isEmpty() != true)
+		{
+			if (choosemode == 2)
+			{
+				num = lc5->GetValueAtEnd();
+			}
+			else
+			{
+				num = lc5->GetValueAtEnd();
+			}
+			if (num == 1)
+			{
+				miListT1->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc5->ExtractAtStart();
+					dataGridView2->Rows[xc1]->Cells[0]->Style->BackColor = Color::Green;
+					xc1++;
+				}
+				else
+				{
+					lc5->ExtractAtEnd();
+					dataGridView2->Rows[x1]->Cells[0]->Style->BackColor = Color::Green;
+					x1--;
+				}
+
+			}
+			else if (num == 2)
+			{
+				miListT2->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc5->ExtractAtStart();
+					dataGridView2->Rows[xc2]->Cells[1]->Style->BackColor = Color::Green;
+					xc2++;
+				}
+				else
+				{
+					lc5->ExtractAtEnd();
+					dataGridView2->Rows[x2]->Cells[1]->Style->BackColor = Color::Red;
+					x2--;
+				}
+
+			}
+			else if (num == 3)
+			{
+				miListT3->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc5->ExtractAtStart();
+					dataGridView2->Rows[xc3]->Cells[2]->Style->BackColor = Color::Green;
+					xc3++;
+				}
+				else
+				{
+					lc5->ExtractAtEnd();
+					dataGridView2->Rows[x3]->Cells[2]->Style->BackColor = Color::Yellow;
+					x3--;
+				}
+
+			}
+			else if (num == 4)
+			{
+				lc4->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc5->ExtractAtStart();
+					dataGridView2->Rows[xc4]->Cells[3]->Style->BackColor = Color::Green;
+					xc4++;
+				}
+				else
+				{
+					lc5->ExtractAtEnd();
+					dataGridView2->Rows[x4]->Cells[3]->Style->BackColor = Color::Purple;
+					x4--;
+				}
+
+			}
+			else if (num == 5)
+			{
+				miListT5->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc5->ExtractAtStart();
+					dataGridView2->Rows[xc4]->Cells[4]->Style->BackColor = Color::Green;
+					xc5++;
+				}
+				else
+				{
+					lc5->ExtractAtEnd();
+					dataGridView2->Rows[x4]->Cells[4]->Style->BackColor = Color::Black;
+					x5--;
+				}
+
+			}
+			else if (num == 6)
+			{
+				miListT6->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc5->ExtractAtStart();
+					dataGridView2->Rows[xc4]->Cells[5]->Style->BackColor = Color::Green;
+					xc6++;
+				}
+				else
+				{
+					lc5->ExtractAtEnd();
+					dataGridView2->Rows[x4]->Cells[5]->Style->BackColor = Color::Blue;
+					x6--;
+				}
+
+			}
+			else if (num == 7)
+			{
+				miListT7->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc5->ExtractAtStart();
+					dataGridView2->Rows[xc4]->Cells[6]->Style->BackColor = Color::Green;
+					xc7++;
+				}
+				else
+				{
+					lc5->ExtractAtEnd();
+					dataGridView2->Rows[x4]->Cells[6]->Style->BackColor = Color::Gray;
+					x7--;
+				}
+
+			}
+			else if (num == 8)
+			{
+				miListT8->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc5->ExtractAtStart();
+					dataGridView2->Rows[xc4]->Cells[7]->Style->BackColor = Color::Green;
+					xc8++;
+				}
+				else
+				{
+					lc5->ExtractAtEnd();
+					dataGridView2->Rows[x4]->Cells[7]->Style->BackColor = Color::DarkBlue;
+					x8--;
+				}
+
+			}
+		}
+		while (lc6->isEmpty() != true)
+		{
+			if (choosemode == 2)
+			{
+				num = lc6->GetValueAtEnd();
+			}
+			else
+			{
+				num = lc6->GetValueAtEnd();
+			}
+			if (num == 1)
+			{
+				miListT1->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc6->ExtractAtStart();
+					dataGridView2->Rows[xc1]->Cells[0]->Style->BackColor = Color::Green;
+					xc1++;
+				}
+				else
+				{
+					lc6->ExtractAtEnd();
+					dataGridView2->Rows[x1]->Cells[0]->Style->BackColor = Color::Green;
+					x1--;
+				}
+
+			}
+			else if (num == 2)
+			{
+				miListT2->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc6->ExtractAtStart();
+					dataGridView2->Rows[xc2]->Cells[1]->Style->BackColor = Color::Green;
+					xc2++;
+				}
+				else
+				{
+					lc6->ExtractAtEnd();
+					dataGridView2->Rows[x2]->Cells[1]->Style->BackColor = Color::Red;
+					x2--;
+				}
+
+			}
+			else if (num == 3)
+			{
+				miListT3->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc6->ExtractAtStart();
+					dataGridView2->Rows[xc3]->Cells[2]->Style->BackColor = Color::Green;
+					xc3++;
+				}
+				else
+				{
+					lc6->ExtractAtEnd();
+					dataGridView2->Rows[x3]->Cells[2]->Style->BackColor = Color::Yellow;
+					x3--;
+				}
+
+			}
+			else if (num == 4)
+			{
+				lc4->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc6->ExtractAtStart();
+					dataGridView2->Rows[xc4]->Cells[3]->Style->BackColor = Color::Green;
+					xc4++;
+				}
+				else
+				{
+					lc6->ExtractAtEnd();
+					dataGridView2->Rows[x4]->Cells[3]->Style->BackColor = Color::Purple;
+					x4--;
+				}
+
+			}
+			else if (num == 5)
+			{
+				miListT5->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc6->ExtractAtStart();
+					dataGridView2->Rows[xc4]->Cells[4]->Style->BackColor = Color::Green;
+					xc5++;
+				}
+				else
+				{
+					lc6->ExtractAtEnd();
+					dataGridView2->Rows[x4]->Cells[4]->Style->BackColor = Color::Black;
+					x5--;
+				}
+
+			}
+			else if (num == 6)
+			{
+				miListT6->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc6->ExtractAtStart();
+					dataGridView2->Rows[xc4]->Cells[5]->Style->BackColor = Color::Green;
+					xc6++;
+				}
+				else
+				{
+					lc6->ExtractAtEnd();
+					dataGridView2->Rows[x4]->Cells[5]->Style->BackColor = Color::Blue;
+					x6--;
+				}
+
+			}
+			else if (num == 7)
+			{
+				miListT7->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc6->ExtractAtStart();
+					dataGridView2->Rows[xc4]->Cells[6]->Style->BackColor = Color::Green;
+					xc7++;
+				}
+				else
+				{
+					lc6->ExtractAtEnd();
+					dataGridView2->Rows[x4]->Cells[6]->Style->BackColor = Color::Gray;
+					x7--;
+				}
+
+			}
+			else if (num == 8)
+			{
+				miListT8->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc6->ExtractAtStart();
+					dataGridView2->Rows[xc4]->Cells[7]->Style->BackColor = Color::Green;
+					xc8++;
+				}
+				else
+				{
+					lc6->ExtractAtEnd();
+					dataGridView2->Rows[x4]->Cells[7]->Style->BackColor = Color::DarkBlue;
+					x8--;
+				}
+
+			}
+		}
+		while (lc7->isEmpty() != true)
+		{
+			if (choosemode == 2)
+			{
+				num = lc7->GetValueAtEnd();
+			}
+			else
+			{
+				num = lc7->GetValueAtEnd();
+			}
+			if (num == 1)
+			{
+				miListT1->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc7->ExtractAtStart();
+					dataGridView2->Rows[xc1]->Cells[0]->Style->BackColor = Color::Green;
+					xc1++;
+				}
+				else
+				{
+					lc7->ExtractAtEnd();
+					dataGridView2->Rows[x1]->Cells[0]->Style->BackColor = Color::Green;
+					x1--;
+				}
+
+			}
+			else if (num == 2)
+			{
+				miListT2->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc7->ExtractAtStart();
+					dataGridView2->Rows[xc2]->Cells[1]->Style->BackColor = Color::Green;
+					xc2++;
+				}
+				else
+				{
+					lc7->ExtractAtEnd();
+					dataGridView2->Rows[x2]->Cells[1]->Style->BackColor = Color::Red;
+					x2--;
+				}
+
+			}
+			else if (num == 3)
+			{
+				miListT3->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc7->ExtractAtStart();
+					dataGridView2->Rows[xc3]->Cells[2]->Style->BackColor = Color::Green;
+					xc3++;
+				}
+				else
+				{
+					lc7->ExtractAtEnd();
+					dataGridView2->Rows[x3]->Cells[2]->Style->BackColor = Color::Yellow;
+					x3--;
+				}
+
+			}
+			else if (num == 4)
+			{
+				lc4->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc7->ExtractAtStart();
+					dataGridView2->Rows[xc4]->Cells[3]->Style->BackColor = Color::Green;
+					xc4++;
+				}
+				else
+				{
+					lc7->ExtractAtEnd();
+					dataGridView2->Rows[x4]->Cells[3]->Style->BackColor = Color::Purple;
+					x4--;
+				}
+
+			}
+			else if (num == 5)
+			{
+				miListT5->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc7->ExtractAtStart();
+					dataGridView2->Rows[xc4]->Cells[4]->Style->BackColor = Color::Green;
+					xc5++;
+				}
+				else
+				{
+					lc7->ExtractAtEnd();
+					dataGridView2->Rows[x4]->Cells[4]->Style->BackColor = Color::Black;
+					x5--;
+				}
+
+			}
+			else if (num == 6)
+			{
+				miListT6->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc7->ExtractAtStart();
+					dataGridView2->Rows[xc4]->Cells[5]->Style->BackColor = Color::Green;
+					xc6++;
+				}
+				else
+				{
+					lc7->ExtractAtEnd();
+					dataGridView2->Rows[x4]->Cells[5]->Style->BackColor = Color::Blue;
+					x6--;
+				}
+
+			}
+			else if (num == 7)
+			{
+				miListT7->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc7->ExtractAtStart();
+					dataGridView2->Rows[xc4]->Cells[6]->Style->BackColor = Color::Green;
+					xc7++;
+				}
+				else
+				{
+					lc7->ExtractAtEnd();
+					dataGridView2->Rows[x4]->Cells[6]->Style->BackColor = Color::Gray;
+					x7--;
+				}
+
+			}
+			else if (num == 8)
+			{
+				miListT8->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc7->ExtractAtStart();
+					dataGridView2->Rows[xc4]->Cells[7]->Style->BackColor = Color::Green;
+					xc8++;
+				}
+				else
+				{
+					lc7->ExtractAtEnd();
+					dataGridView2->Rows[x4]->Cells[7]->Style->BackColor = Color::DarkBlue;
+					x8--;
+				}
+
+			}
+		}
+		while (lc8->isEmpty() != true)
+		{
+			if (choosemode == 2)
+			{
+				num = lc8->GetValueAtEnd();
+			}
+			else
+			{
+				num = lc8->GetValueAtEnd();
+			}
+			if (num == 1)
+			{
+				miListT1->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc8->ExtractAtStart();
+					dataGridView2->Rows[xc1]->Cells[0]->Style->BackColor = Color::Green;
+					xc1++;
+				}
+				else
+				{
+					lc8->ExtractAtEnd();
+					dataGridView2->Rows[x1]->Cells[0]->Style->BackColor = Color::Green;
+					x1--;
+				}
+
+			}
+			else if (num == 2)
+			{
+				miListT2->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc8->ExtractAtStart();
+					dataGridView2->Rows[xc2]->Cells[1]->Style->BackColor = Color::Green;
+					xc2++;
+				}
+				else
+				{
+					lc8->ExtractAtEnd();
+					dataGridView2->Rows[x2]->Cells[1]->Style->BackColor = Color::Red;
+					x2--;
+				}
+
+			}
+			else if (num == 3)
+			{
+				miListT3->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc8->ExtractAtStart();
+					dataGridView2->Rows[xc3]->Cells[2]->Style->BackColor = Color::Green;
+					xc3++;
+				}
+				else
+				{
+					lc8->ExtractAtEnd();
+					dataGridView2->Rows[x3]->Cells[2]->Style->BackColor = Color::Yellow;
+					x3--;
+				}
+
+			}
+			else if (num == 4)
+			{
+				lc4->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc8->ExtractAtStart();
+					dataGridView2->Rows[xc4]->Cells[3]->Style->BackColor = Color::Green;
+					xc4++;
+				}
+				else
+				{
+					lc8->ExtractAtEnd();
+					dataGridView2->Rows[x4]->Cells[3]->Style->BackColor = Color::Purple;
+					x4--;
+				}
+
+			}
+			else if (num == 5)
+			{
+				miListT5->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc8->ExtractAtStart();
+					dataGridView2->Rows[xc4]->Cells[4]->Style->BackColor = Color::Green;
+					xc5++;
+				}
+				else
+				{
+					lc8->ExtractAtEnd();
+					dataGridView2->Rows[x4]->Cells[4]->Style->BackColor = Color::Black;
+					x5--;
+				}
+
+			}
+			else if (num == 6)
+			{
+				miListT6->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc8->ExtractAtStart();
+					dataGridView2->Rows[xc4]->Cells[5]->Style->BackColor = Color::Green;
+					xc6++;
+				}
+				else
+				{
+					lc8->ExtractAtEnd();
+					dataGridView2->Rows[x4]->Cells[5]->Style->BackColor = Color::Blue;
+					x6--;
+				}
+
+			}
+			else if (num == 7)
+			{
+				miListT7->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc8->ExtractAtStart();
+					dataGridView2->Rows[xc4]->Cells[6]->Style->BackColor = Color::Green;
+					xc7++;
+				}
+				else
+				{
+					lc8->ExtractAtEnd();
+					dataGridView2->Rows[x4]->Cells[6]->Style->BackColor = Color::Gray;
+					x7--;
+				}
+
+			}
+			else if (num == 8)
+			{
+				miListT8->InsertAtStart(num);
+				if (choosemode == 2)
+				{
+					lc8->ExtractAtStart();
+					dataGridView2->Rows[xc4]->Cells[7]->Style->BackColor = Color::Green;
+					xc8++;
+				}
+				else
+				{
+					lc8->ExtractAtEnd();
+					dataGridView2->Rows[x4]->Cells[7]->Style->BackColor = Color::DarkBlue;
+					x8--;
+				}
+
+			}
 		}
 	}
 
