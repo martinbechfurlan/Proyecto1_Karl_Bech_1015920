@@ -248,20 +248,7 @@ namespace Proyecto1KarlBech1015920 {
 			comboBox2->Visible = true;
 		}
 	}
-		   int dificultad_m(int v) {
-			   if (v == 0) {
-				   dificultad = 1;
-				   return dificultad;
-			   }
-			   else if (v == 1) {
-				   dificultad = 2;
-				   return dificultad;
-			   }
-			   else if (v == 2) {
-				   dificultad = 3;
-				   return dificultad;
-			   }
-		   }
+		
 	private: System::Void comboBox2_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 		v2 = comboBox2->SelectedIndex;
 		if (v2 == 0) {
@@ -279,7 +266,17 @@ namespace Proyecto1KarlBech1015920 {
 	}
 	private: System::Void comboBox3_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 		v3 = comboBox3->SelectedIndex;
-		dificultad = dificultad_m(v3);
+		if (v3 == 0) {
+			dificultad = 1;
+			
+		}
+		else if (v3 == 1) {
+			dificultad = 2;
+			
+		}
+		else if (v3 == 2) {
+			dificultad = 3;
+		}
 		campo_btn->Visible = true;
 	}
 	

@@ -268,12 +268,12 @@ namespace Proyecto1KarlBech1015920 {
 							button1->Visible = false;							
 						}
 						else {
-							if (comprobacion_cantidad(archivoColumna, pilas) == false) {
+							if (quantitypilas(archivoColumna, pilas) == false) {
 								MessageBox::Show("MÁS COLORES QUE GRUPOS, o no concuerda con el ingreso!", "Alerta", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 								button1->Visible = false;
 							}
 							else {
-								if (letras_check(archivoColumna, capacidad) == false) {
+								if (letrasprobe(archivoColumna, capacidad) == false) {
 									MessageBox::Show("INGRESO DE MUCHOS COLORES IGUALES SOBREPASANDO LA CAPACIDAD DE LA LISTA, o no concuerda con el ingreso!", "Alerta", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 									button1->Visible = false;
 								}
@@ -318,7 +318,7 @@ private: System::Void comprobar_btn_Click(System::Object^ sender, System::EventA
 	
 }
 
-	   bool comprobacion_cantidad(array<String^>^ doc, int pil) {
+	   bool quantitypilas(array<String^>^ doc, int pil) {
 		   int capacidadpilas = 0, c2 = 0, c3 = 0, c4 = 0, c5 = 0, c6 = 0, c7 = 0, c8 = 0;
 		   String^ letra;
 		   for (int i = 0; i < doc->Length; i++) {
@@ -357,7 +357,7 @@ private: System::Void comprobar_btn_Click(System::Object^ sender, System::EventA
 		   }
 	   }
 	   
-	   bool letras_check(array<String^>^ bloc, int check) {
+	   bool letrasprobe(array<String^>^ bloc, int check) {
 		   int capacidadpilas = 0, c2 = 0, c3 = 0, c4 = 0, c5 = 0, c6 = 0, c7 = 0, c8 = 0;
 		   String^ letra;
 		   for (int i = 0; i < bloc->Length; i++) {
